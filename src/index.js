@@ -4,6 +4,12 @@ import './index.css';
 import App from './App';
 
 
+import store from './store/store';
+
+import { loadPosts } from './store/postsSlice';
+
+store.dispatch(loadPosts());
+
 ReactDOM.render(
   
     <App />
