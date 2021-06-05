@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-// import { createSelector } from 'reselect';
+import { createSelector } from 'reselect';
 import { apiCallBegan } from './api';
 import moment from 'moment';
 
@@ -41,7 +41,7 @@ export const loadPosts = () => (dispatch, getState) => {
 
     dispatch(
         apiCallBegan({
-            url: 'https://reddit.com/r/all.json',
+            url: url + '.json',
             onStart: postsRequested.type,
             onSuccess: postsReceived.type,
             onError: postsRequestFailed.type
@@ -51,3 +51,11 @@ export const loadPosts = () => (dispatch, getState) => {
 
 export const { postsRequested, postsReceived, postsRequestFailed } = postsSlice.actions;
 export default postsSlice.reducer;
+
+
+//posts selector
+//should return state.entities.posts.list
+
+export const selectPostsList = (state) => state.entities.posts.list;
+
+

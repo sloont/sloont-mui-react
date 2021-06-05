@@ -3,6 +3,7 @@ import './App.css';
 
 // import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import { CssBaseline } from '@material-ui/core';
+import { Provider } from 'react-redux';
 
 import Navigation from './mainNavigation/Navigation';
 import {
@@ -14,6 +15,7 @@ import Home from './pages/Home';
 import Projects from './pages/Projects';
 import About from './pages/About';
 import Snips from './pages/Snips';
+import store from './store/store';
 
 const App = () => {
   
@@ -34,7 +36,7 @@ const App = () => {
   return (
     
     <Router>
-      {/* <ThemeProvider theme={theme}> */}
+      <Provider store={store}>
       <div className="App">
         <CssBaseline />
         <Navigation />
@@ -46,7 +48,7 @@ const App = () => {
         <Route path="/about">{About}</Route>
         <Route path="/snips">{Snips}</Route>
       </Switch>
-      {/* </ThemeProvider> */}
+      </Provider>
     </Router>
     
   );

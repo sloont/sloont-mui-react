@@ -21,11 +21,13 @@ const api = ({ dispatch }) => (next) => async (action) => {
             data
 
         });
+        const postData = response.data.data.children.map((post) => {return post.data})
+        console.log(postData);
 
-        dispatch(actions.apiCallSuccess(response.data));
+        dispatch(actions.apiCallSuccess(postData));
 
         if (onSuccess) {
-            dispatch({ type: onSuccess, payload: response.data });
+            dispatch({ type: onSuccess, payload: postData });
         }
 
     } catch (error) {
