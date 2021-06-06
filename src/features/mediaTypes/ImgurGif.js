@@ -46,7 +46,7 @@ const ImgurGif = ( { post } ) => {
                     className={classes.iframeEmbed}
                     frameBorder="0"
                     loop
-                    autoplay='autoplay'
+                    autoPlay
                     preload='auto'
                     type='video/mp4'
                     controls

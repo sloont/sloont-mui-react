@@ -21,7 +21,7 @@ const Snips = () => {
 
     return (
         <Container type="container" padding={3}>
-            <Typography variant="h3" >reddit snips.</Typography>
+            <Typography variant="h3" style={{ margin: '2rem 0', textAlign: 'center' }}>reddit snips.</Typography>
             <Grid container spacing={3} justify="center">
                 {postsList.map((post, index) => <Post post={post} key={index} />)}
 

@@ -8,6 +8,7 @@ import BasicImage from './mediaTypes/BasicImage';
 import BasicLink from './mediaTypes/BasicLink';
 import Voting from '../features/Voting';
 import ImgurGif from './mediaTypes/ImgurGif';
+import LinkWithThumbnail from './mediaTypes/LinkWithThumbnail';
 
 
 
@@ -26,6 +27,8 @@ const Post = ( { post } ) => {
 
     //determine if basic image with post.post_hint
     if (post.post_hint === "image") mediaContent = <BasicImage post={post} />
+
+    if (post.post_hint === "link" && post.domain !== "i.imgur.com") mediaContent = <LinkWithThumbnail post={post}/>
 
     return (
         <Grid item sm={7}>
