@@ -43,10 +43,10 @@ const App = () => {
       </div>
       
       <Switch>
-        <Route exact path="/">{Home}</Route>
-        <Route path="/projects">{Projects}</Route>
-        <Route path="/about">{About}</Route>
-        <Route path="/snips">{Snips}</Route>
+        <Route exact path="/"><Home /></Route>
+        <Route path="/projects"><Projects /></Route>
+        <Route path="/about"><About /></Route>
+        <Route path="/snips"><Snips /></Route>
       </Switch>
       </Provider>
     </Router>

@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { createSelector } from 'reselect';
+
 import { apiCallBegan } from './api';
 import moment from 'moment';
 
@@ -33,7 +33,7 @@ const url = "/r/all";
 //action creators
 
 export const loadPosts = () => (dispatch, getState) => {
-    const { lastFetch } = getState().entities.posts;       //////////////////////////////NEED TO SET UP STORE AND COMBINE REDUCERS
+    const { lastFetch } = getState().entities.posts; 
 
     const diffInMinutes = moment().diff(moment(lastFetch), 'minutes');
 

@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 //import './pages.css';
 
-import { Container, Typography, Grid, Paper, Card, CardHeader, CardContent } from '@material-ui/core';
+import { Container, Typography, Grid } from '@material-ui/core';
 import { loadPosts, selectPostsList } from '../store/postsSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import Post from '../features/Post';
 
 require('react-dom');
 window.React2 = require('react');
@@ -21,15 +22,8 @@ const Snips = () => {
     return (
         <Container type="container" padding={3}>
             <Typography variant="h3" >reddit snips.</Typography>
-            <Grid container spacing={3}>
-                {postsList.map((post) => (
-                        <Card>
-                            <CardContent>{post.title}</CardContent>
-                        </Card>
-                ))}
-                    
-                
-                <Paper item/>
+            <Grid container spacing={3} justify="center">
+                {postsList.map((post, index) => <Post post={post} key={index} />)}
 
             </Grid>
         </Container>
