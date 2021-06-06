@@ -15,7 +15,7 @@ const BasicLink = ( { post } ) => {
     const textPost = parse(htmlElements);
 
     return (
-        <Grid item sm={10}>
+        <Grid item sm={8}>
             <PostTitle post={post} />
             
             

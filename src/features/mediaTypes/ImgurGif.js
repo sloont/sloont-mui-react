@@ -26,9 +26,9 @@ const useStyles = makeStyles({
     }
 });
 
-const Vreddit = ( { post } ) => {
+const ImgurGif = ( { post } ) => {
 
-    const source = post.secure_media.reddit_video.fallback_url;
+    const source = post.url.slice(0, 27) + '.mp4';
 
     const classes = useStyles();
 
@@ -40,11 +40,18 @@ const Vreddit = ( { post } ) => {
             <div className={classes.iframeContainer}>
                 <CardMedia
                 
-                    component="iframe"
+                    component="video"
                     src={source}
                     title={post.title}
                     className={classes.iframeEmbed}
                     frameBorder="0"
+                    loop
+                    autoplay='autoplay'
+                    preload='auto'
+                    type='video/mp4'
+                    controls
+                    muted
+                    style={{ background: '#000'}}
                 />
             </div>
             
@@ -54,4 +61,4 @@ const Vreddit = ( { post } ) => {
     );
 }
 
-export default Vreddit;
+export default ImgurGif;

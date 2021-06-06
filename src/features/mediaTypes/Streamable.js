@@ -35,7 +35,7 @@ const Streamable = ( { post } ) => {
     const classes = useStyles();
 
     return (
-        <Grid item sm={10}>
+        <Grid item sm={8}>
 
             <PostTitle post={post} />
             

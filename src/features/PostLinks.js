@@ -6,8 +6,12 @@ const useStyles = makeStyles({
 
     linkBar: {
         display: 'flex',
-        justifyContent: 'space-between'
-    }
+        justifyContent: 'space-between',
+        flexWrap: 'wrap'
+    },
+    // newLine: {
+    //     whiteSpace: 'pre-line'
+    // }
 }); 
 
 const PostLinks = ({ post }) => {
@@ -16,8 +20,9 @@ const PostLinks = ({ post }) => {
 
     return (
         <CardContent className={classes.linkBar}>
-            <Typography variant="overline">{post.author}</Typography>
-            <Typography variant="button" align="right" color="primary">{post.subreddit_name_prefixed}</Typography>
+            <Typography variant="button" display="block">{"U/" + post.author}</Typography>
+            {/* <div className={classes.newLine}/> */}
+            <Typography variant="button" color="primary" display="block">{post.subreddit_name_prefixed}</Typography>
         </CardContent>
     );
 }
