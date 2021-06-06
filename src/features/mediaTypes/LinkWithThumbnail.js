@@ -3,6 +3,7 @@ import { Grid, CardMedia, Typography, Link } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import PostLinks from '../PostLinks';
 import PostTitle from '../PostTitle';
+import img from './placeholderThumbnail.jpg'
 
 const useStyles = makeStyles({
         
@@ -27,7 +28,7 @@ const useStyles = makeStyles({
 });
 
 const Gfycat = ( { post } ) => {
-
+    const placeholder = img;
     const classes = useStyles();
 
     return (
@@ -40,7 +41,7 @@ const Gfycat = ( { post } ) => {
                     className={classes.thumbnail}
                     component={'img'}
                     title={post.title}
-                    src={post.thumbnail}
+                    src={post.thumbnail !== "default" || !post.thumbnail ? post.thumbnail : placeholder}
                 />
 
                 <Link><Typography variant="body1">{post.domain}</Typography></Link>
