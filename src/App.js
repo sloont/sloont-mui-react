@@ -28,6 +28,10 @@ const App = () => {
       },
       secondary: {
         main: '#ff905b',
+      },
+      background: {
+        paper: 'rgba(255,255,255,0.05)',
+        default: '#1a2125'
       }
 
     },
@@ -39,17 +43,18 @@ const App = () => {
     <Router>
       <Provider store={store}>
         <ThemeProvider theme={darkTheme}>
-      <div className="App">
-        <CssBaseline />
-        <Navigation />
-      </div>
-      
-      <Switch>
-        <Route exact path="/"><Home /></Route>
-        <Route path="/projects"><Projects /></Route>
-        <Route path="/about"><About /></Route>
-        <Route path="/snips"><Snips /></Route>
-      </Switch>
+          <CssBaseline />
+          <Navigation />
+          <main>
+  
+              <Switch>
+                <Route exact path="/"><Home /></Route>
+                <Route path="/projects"><Projects /></Route>
+                <Route path="/about"><About /></Route>
+                <Route path="/snips"><Snips /></Route>
+              </Switch>
+  
+          </main>
       </ThemeProvider>
       </Provider>
     </Router>
