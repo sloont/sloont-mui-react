@@ -29,10 +29,9 @@ const postsSlice = createSlice({
     }
 });
 
-const url = "/r/all";
 //action creators
 
-export const loadPosts = () => (dispatch, getState) => {
+export const loadPosts = (url = '/r/all') => (dispatch, getState) => {
     const { lastFetch } = getState().entities.posts; 
 
     const diffInMinutes = moment().diff(moment(lastFetch), 'minutes');

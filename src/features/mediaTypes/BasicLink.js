@@ -7,6 +7,7 @@ import { parsingFunction } from '../../parser';
 import PostLinks from '../PostLinks';
 import PostTitle from '../PostTitle';
 
+//THIS IS ACTUALLY FOR TEXT POSTS //SHOULD RENAME
 
 const BasicLink = ( { post } ) => {
     

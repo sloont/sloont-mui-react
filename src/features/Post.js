@@ -15,9 +15,7 @@ import LinkWithThumbnail from './mediaTypes/LinkWithThumbnail';
 const Post = ( { post } ) => {
 
     
-    let mediaContent = <></>;
-    //need this one first so it can overwrite if valid domain for media embed
-    if (post.post_hint === "link") mediaContent = <LinkWithThumbnail post={post}/>
+    let mediaContent = <LinkWithThumbnail post={post}/>
 
     if (post.domain && post.domain === "gfycat.com") mediaContent = <Gfycat post={post} />
     if (post.domain && post.domain === "streamable.com") mediaContent = <Streamable post={post} />
@@ -25,7 +23,7 @@ const Post = ( { post } ) => {
     if (post.domain && post.domain === "i.imgur.com") mediaContent = <ImgurGif post={post} />
 
     //text posts don't have a post.post_hint
-    if (!post.post_hint || post.post_hint === "self") mediaContent = <BasicLink post={post} />
+    if (post.post_hint === "self") mediaContent = <BasicLink post={post} />
 
     //determine if basic image with post.post_hint
     if (post.post_hint === "image") mediaContent = <BasicImage post={post} />

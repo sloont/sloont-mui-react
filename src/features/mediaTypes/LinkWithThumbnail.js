@@ -43,8 +43,8 @@ const LinkWithThumbnail = ( { post } ) => {
                     title={post.title}
                     src={post.thumbnail !== "default" || !post.thumbnail ? post.thumbnail : placeholder}
                 />
-
-                <Link><Typography variant="body1">{post.domain}</Typography></Link>
+                {/* Probably need some kind of "navigation from page check" */}
+                <Link href={post.url}><Typography variant="body1">{post.domain}</Typography></Link>
             </div>
 
             <PostLinks post={post} />
