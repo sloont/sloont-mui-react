@@ -27,7 +27,7 @@ const useStyles = makeStyles({
     }
 });
 
-const Gfycat = ( { post } ) => {
+const LinkWithThumbnail = ( { post } ) => {
     const placeholder = img;
     const classes = useStyles();
 
@@ -53,4 +53,4 @@ const Gfycat = ( { post } ) => {
     );
 }
 
-export default Gfycat;
+export default LinkWithThumbnail;

@@ -16,6 +16,8 @@ const Post = ( { post } ) => {
 
     
     let mediaContent = <></>;
+    //need this one first so it can overwrite if valid domain for media embed
+    if (post.post_hint === "link") mediaContent = <LinkWithThumbnail post={post}/>
 
     if (post.domain && post.domain === "gfycat.com") mediaContent = <Gfycat post={post} />
     if (post.domain && post.domain === "streamable.com") mediaContent = <Streamable post={post} />
@@ -28,10 +30,10 @@ const Post = ( { post } ) => {
     //determine if basic image with post.post_hint
     if (post.post_hint === "image") mediaContent = <BasicImage post={post} />
 
-    if (post.post_hint === "link" && post.domain !== "i.imgur.com") mediaContent = <LinkWithThumbnail post={post}/>
+    
 
     return (
-        <Grid item sm={7}>
+        <Grid item sm={10}>
             <Card>
                 <Grid container>
                     <Voting post={post}/>

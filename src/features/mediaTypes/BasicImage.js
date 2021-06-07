@@ -13,7 +13,8 @@ const useStyles = makeStyles({
         width: '100%',
         
         boxShadow: '0 3px 5px 2px rgba(0,0,0, .3)',
-        marginBottom: '1rem'
+        marginBottom: '1rem',
+        
     },
     
     imageEmbed: {
@@ -22,7 +23,6 @@ const useStyles = makeStyles({
         left: 0,
         height: '100%',
         width: '100%',
-        
         
     }
 });

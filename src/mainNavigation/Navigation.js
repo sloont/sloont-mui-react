@@ -13,7 +13,7 @@ const Navigation = () => {
 
 
     return (
-        <AppBar position="sticky" style={{background: '#121212'}}>
+        <AppBar position="fixed" style={{background: '#121212'}}>
             <Toolbar>
                 <IconButton>
                     <DirectionsWalkIcon fontSize="large"/> 
