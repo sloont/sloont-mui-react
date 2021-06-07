@@ -1,6 +1,6 @@
 import React from 'react';
 import img from '../features/mediaTypes/images/subredditThumbnail.png';
-import { CardContent, Typography } from '@material-ui/core';
+import { CardContent, Typography, Divider } from '@material-ui/core';
 import { FaReddit } from 'react-icons/fa';
 import { makeStyles } from '@material-ui/core/styles';
 import { lightenColor } from '../helpers/manipulateColor';
@@ -13,7 +13,7 @@ const useStyles = makeStyles({
     }
 });
 
-const SubredditNavLink = ({ subreddit }) => {
+const SubredditNavLink = ({ subreddit, isLast }) => {
     const classes = useStyles();
     const subThemeColor = subreddit.primary_color ? lightenColor(subreddit.primary_color) : "#ff905b";
     let subIcon;
@@ -37,14 +37,18 @@ const SubredditNavLink = ({ subreddit }) => {
         )
     }
 
-    return (
+    const conditionalDivider = !isLast ? <Divider /> : <></>
 
+    return (
+        <>
         <CardContent className={classes.individualSub}>
             {subIcon}
             <Typography variant="button" color="primary">
                 {subreddit.display_name_prefixed}
             </Typography>
         </CardContent>
+        {conditionalDivider}
+        </>
                
     );
 

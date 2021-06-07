@@ -27,8 +27,6 @@ const Projects = () => {
             <NavLink to="/snips" className={classes.navLinkButton}>
                 <Button variant="contained" color="secondary">snips.</Button>
             </NavLink>
-              
-            
         </Container>
     )
 }

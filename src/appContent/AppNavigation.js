@@ -37,9 +37,16 @@ const AppNavigation = () => {
         <Grid item className={classes.navFixedContainer} sm={4}>
             <div className={classes.subredditCardWrapper}>
                 <Card>          
-                    {subredditsList.map((subreddit) => ( 
-                        <SubredditNavLink key={subreddit.name} subreddit={subreddit} />
-                    ))}
+                    {subredditsList.map((subreddit, index) => {
+
+                        //is last item
+                        if (!subredditsList[index + 1]) return <SubredditNavLink key={subreddit.name} subreddit={subreddit} isLast={true}/>
+                        
+                        //not last item
+                        return ( 
+                            <SubredditNavLink key={subreddit.name} subreddit={subreddit} isLast={false}/>
+                        )}
+                    )}
                 </Card>
             </div>
         </Grid>
