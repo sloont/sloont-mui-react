@@ -12,13 +12,17 @@ const useStyles = makeStyles({
         width: '100%',
         paddingTop: '56.25%',
         boxShadow: '0 3px 5px 2px rgba(0,0,0,0.3)',
-        marginBottom: '1rem'
+        marginBottom: '1rem',
+        maxWidth: '100%',
+        maxHeight: '100%',
     },
     
     iframeEmbed: {
         position: 'absolute',
         top: 0,
         left: 0,
+        bottom: 0,
+        right: 0,
         width: '100%',
         height: '100%',
         
@@ -58,6 +62,7 @@ const VredditAsVideo = ( { post } ) => {
                     controls
                     muted
                     style={{ background: '#000'}}
+                    
                 />
             </div>
             

@@ -3,7 +3,17 @@ import hexRgb from 'hex-rgb';
 
 export const lightenColor = (colorAsHexString) => {
     
-    let color = Color(hexRgb(colorAsHexString, {format: 'array'}));
-    return color.lighten(0.7).hex();
+    return formatColorInput(colorAsHexString).lighten(0.7).hex();
+    
+    
+};
+
+export const saturateColor = (colorAsHexString) => {
+
+    return formatColorInput(colorAsHexString).saturate(0.2).hex();
+};
+
+const formatColorInput = (colorAsHexString) => {
+    return Color(hexRgb(colorAsHexString, {format: 'array'}));
     
 }

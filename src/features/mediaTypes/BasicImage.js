@@ -24,7 +24,8 @@ const useStyles = makeStyles({
         height: '100%',
         width: '100%',
         
-    }
+    },
+
 });
 
 const BasicImage = ( { post } ) => {
@@ -38,7 +39,7 @@ const BasicImage = ( { post } ) => {
             
             <div className={classes.imageContainer}>
                 <CardMedia
-                
+                    
                     component="img"
                     src={post.url}
                     title={post.title}

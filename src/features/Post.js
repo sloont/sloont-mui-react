@@ -32,7 +32,7 @@ const Post = ( { post } ) => {
     
 
     return (
-        <Grid item sm={10}>
+        <Grid item sm={12} style={{ margin: '0 28px 0 28px'}}>
             <Card>
                 <Grid container>
                     <Voting post={post}/>

@@ -13,7 +13,7 @@ const useStyles = makeStyles({
 });
 
 const Voting = ({ post }) => {
-    const defaultColor = "inherit";
+    const defaultColor = "#ffffff";
     const blueColor = "#75cff8";
     const orangeColor = "#ff905b";
 
