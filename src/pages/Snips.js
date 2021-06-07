@@ -15,7 +15,7 @@ const Snips = () => {
     return (
         <Container type="container" padding={3}>
             <Typography variant="h3" style={{ margin: '6rem 0 2rem 0', textAlign: 'center' }}>reddit snips.</Typography>
-            <Grid container justify="space-around">
+            <Grid container justify="center">
                 <AppContent />
                 <AppNavigation />
             </Grid>

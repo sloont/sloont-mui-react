@@ -21,7 +21,13 @@ export default store;
 //             list: [],
 //             loading: false,
 //             lastFetch: null
-//         }
+//         },
+
+//          subreddits: {
+//              list: [],
+//              loading: false,
+//              lastFetch: null
+//          }
 //     }
 // }
 
