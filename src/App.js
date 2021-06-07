@@ -16,27 +16,29 @@ import Projects from './pages/Projects';
 import About from './pages/About';
 import Snips from './pages/Snips';
 import store from './store/store';
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 const App = () => {
   
-  // const theme = createMuiTheme({
-  //   palette: {
-  //     type: 'dark',
-  //     primary: {
-  //       main: '#29b6f6',
-  //     },
-  //     secondary: {
-  //       main: '#ff5301',
-  //     }
+  const darkTheme = createMuiTheme({
+    palette: {
+      type: 'dark',
+      primary: {
+        main: '#29b6f6',
+      },
+      secondary: {
+        main: '#ff5301',
+      }
 
-  //   },
+    },
   
-  // });
+  });
 
   return (
     
     <Router>
       <Provider store={store}>
+        <ThemeProvider theme={darkTheme}>
       <div className="App">
         <CssBaseline />
         <Navigation />
@@ -48,6 +50,7 @@ const App = () => {
         <Route path="/about"><About /></Route>
         <Route path="/snips"><Snips /></Route>
       </Switch>
+      </ThemeProvider>
       </Provider>
     </Router>
     

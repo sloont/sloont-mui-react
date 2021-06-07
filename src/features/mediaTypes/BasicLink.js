@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid } from '@material-ui/core';
 
 import parse from 'html-react-parser';
-import { parsingFunction } from '../../parser';
+import { parsingFunction } from '../../helpers/parser';
 
 import PostLinks from '../PostLinks';
 import PostTitle from '../PostTitle';

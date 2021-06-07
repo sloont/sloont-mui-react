@@ -3,7 +3,7 @@ import { Grid, CardMedia, Typography, Link } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import PostLinks from '../PostLinks';
 import PostTitle from '../PostTitle';
-import img from './placeholderThumbnail.jpg'
+import img from './images/placeholderThumbnail.jpg'
 
 const useStyles = makeStyles({
         

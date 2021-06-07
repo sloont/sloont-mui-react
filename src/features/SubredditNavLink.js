@@ -1,9 +1,9 @@
 import React from 'react';
-import img from '../features/mediaTypes/subredditThumbnail.png';
+import img from '../features/mediaTypes/images/subredditThumbnail.png';
 import { CardContent, Typography } from '@material-ui/core';
 import { FaReddit } from 'react-icons/fa';
 import { makeStyles } from '@material-ui/core/styles';
-import { lightenColor } from '../manipulateColor';
+import { lightenColor } from '../helpers/manipulateColor';
 
 const useStyles = makeStyles({
     individualSub: {
