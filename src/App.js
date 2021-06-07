@@ -24,10 +24,10 @@ const App = () => {
     palette: {
       type: 'dark',
       primary: {
-        main: '#29b6f6',
+        main: '#75cff8',
       },
       secondary: {
-        main: '#ff5301',
+        main: '#ff905b',
       }
 
     },

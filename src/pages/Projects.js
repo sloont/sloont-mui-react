@@ -24,9 +24,11 @@ const Projects = () => {
     return (
         <Container className={classes.tempContainer}>
             <Typography variant="h3" style={{ marginBottom: '2rem'}}>projects.</Typography>
-            <Button variant="contained" color="secondary">
-                <NavLink to="/snips" className={classes.navLinkButton}>snips.</NavLink>
-            </Button>
+            <NavLink to="/snips" className={classes.navLinkButton}>
+                <Button variant="contained" color="secondary">snips.</Button>
+            </NavLink>
+              
+            
         </Container>
     )
 }
