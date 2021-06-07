@@ -11,7 +11,7 @@ const useStyles = makeStyles({
         position: 'relative',
         overflow: 'hidden',
         width: '100%',
-        boxShadow: '0 3px 5px 2px rgba(0,0,0, .3)',
+        // boxShadow: '0 3px 5px 2px rgba(0,0,0, .3)',
         marginBottom: '1rem',
         display: 'flex',
         justifyContent: 'space-around',

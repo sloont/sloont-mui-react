@@ -28,7 +28,13 @@ const useStyles = makeStyles({
 
 const Vreddit = ( { post } ) => {
 
-    const source = post.secure_media.reddit_video.fallback_url;
+    //"https://v.redd.it/69cbkmyuru371/DASH_720.mp4?source=fallback" <--Format of secure_media.fallback_url
+    //"https://v.redd.it/69cbkmyuru371"                              <--Format of url for v_reddit
+
+    //This ternary catches the weird bug where the json media and secure_media are both null
+
+    const source = post.secure_media !== null ? post.secure_media.reddit_video.fallback_url : post.url + '/DASH_720.mp4?source=fallback';
+    
 
     const classes = useStyles();
 
