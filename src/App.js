@@ -30,7 +30,7 @@ const App = () => {
         main: '#ff905b',
       },
       background: {
-        paper: 'rgba(255,255,255,0.04)',
+        paper: '#232a2e',
         default: '#1a2125'
       },
       shadows: Array(25).fill('none'),
