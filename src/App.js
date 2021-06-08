@@ -30,9 +30,23 @@ const App = () => {
         main: '#ff905b',
       },
       background: {
-        paper: 'rgba(255,255,255,0.05)',
+        paper: 'rgba(255,255,255,0.04)',
         default: '#1a2125'
+      },
+      shadows: Array(25).fill('none'),
+      grey: {
+        50:  '#f2fbff',
+        100: '#edf6fc',
+        200: '#e6eff4',
+        300: '#d7e0e6',
+        400: '#b4bdc2',
+        500: '#959ea3',
+        600: '#6d757a',
+        700: '#596166',
+        800: '#3a4246',
+        900: '#1a2125',
       }
+      
 
     },
   

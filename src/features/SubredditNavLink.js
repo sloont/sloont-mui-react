@@ -1,6 +1,6 @@
 import React from 'react';
 import img from '../features/mediaTypes/images/subredditThumbnail.png';
-import { CardContent, Typography, Divider } from '@material-ui/core';
+import { CardContent, Typography, Divider, } from '@material-ui/core';
 import { FaReddit } from 'react-icons/fa';
 import { makeStyles } from '@material-ui/core/styles';
 import { lightenColor } from '../helpers/manipulateColor';
@@ -37,18 +37,18 @@ const SubredditNavLink = ({ subreddit, isLast }) => {
         )
     }
 
-    const conditionalDivider = !isLast ? <Divider /> : <></>
+    const conditionalDivider = !isLast ? <Divider variant="middle"/> : <></>
 
     return (
-        <>
+        <div>
         <CardContent className={classes.individualSub}>
             {subIcon}
-            <Typography variant="button" color="primary">
+            <Typography variant="overline" color="text">
                 {subreddit.display_name_prefixed}
             </Typography>
         </CardContent>
         {conditionalDivider}
-        </>
+        </div>
                
     );
 

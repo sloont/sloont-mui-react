@@ -17,11 +17,13 @@ const PostLinks = ({ post }) => {
 
     return (
         <CardContent className={classes.linkBar}>
-            <Typography variant="button" display="block">{"U/" + post.author}</Typography>
+            <Typography variant="overline" display="block">{"U/" + post.author}</Typography>
             
-            <Typography variant="button" color="primary" display="block">{post.subreddit_name_prefixed}</Typography>
+            <Typography variant="overline" color="text" display="block">{post.subreddit_name_prefixed}</Typography>
         </CardContent>
     );
 }
 
 export default PostLinks;
+
+//#232a2e

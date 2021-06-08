@@ -10,11 +10,14 @@ import SubredditNavLink from '../features/SubredditNavLink';
 const useStyles = makeStyles({
     navFixedContainer: {
         position: 'relative',
-        maxWidth: '16rem'
+        maxWidth: '16rem',
+        
+        
     },
     subredditCardWrapper: {
         position: 'sticky',
         top: '-70%',        //This is a hack. Needs to change based on number of components and their sizes
+    
     },
     
 });
@@ -35,8 +38,8 @@ const AppNavigation = () => {
     return (
         
         <Grid item className={classes.navFixedContainer} sm={4}>
-            <div className={classes.subredditCardWrapper}>
-                <Card>          
+            <div className={classes.subredditCardWrapper} >
+                <Card elevation={2} >          
                     {subredditsList.map((subreddit, index) => {
 
                         //is last item

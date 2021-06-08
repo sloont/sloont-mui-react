@@ -32,7 +32,7 @@ const Post = ( { post } ) => {
 
     return (
         <Grid item sm={12} style={{ margin: '0 28px 0 28px' }}>
-            <Card elevation={2}> {/*Even on type: dark, there is no overlay of white translucent on the cards */}
+            <Card elevation={2} > {/*Even on type: dark, there is no overlay of white translucent on the cards */}
                 <Grid container>
                     <Voting post={post}/>
                     {mediaContent}
