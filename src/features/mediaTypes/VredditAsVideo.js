@@ -15,6 +15,7 @@ const useStyles = makeStyles({
         marginBottom: '1rem',
         maxWidth: '100%',
         maxHeight: '100%',
+        borderRadius: 4
     },
     
     iframeEmbed: {

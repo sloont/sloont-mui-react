@@ -19,6 +19,9 @@ const useStyles = makeStyles({
         top: '-70%',        //This is a hack. Needs to change based on number of components and their sizes
     
     },
+    cardStyle: {
+        boxShadow: "none"
+    }
     
 });
 
@@ -39,7 +42,7 @@ const AppNavigation = () => {
         
         <Grid container item className={classes.navFixedContainer} sm={4} >
             <Grid item className={classes.subredditCardWrapper} sm={12}>
-                <Card elevation={2}>          
+                <Card elevation={2} style={{ boxShadow: '0 3px 5px 2px rgba(0,0,0, .3)' }}>          
                     
                     {subredditsList.map((subreddit, index) => {
 

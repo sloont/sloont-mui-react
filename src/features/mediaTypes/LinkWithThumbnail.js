@@ -14,7 +14,7 @@ const useStyles = makeStyles({
         position: 'relative',
         overflow: 'hidden',
         width: '100%',
-        background: '#676767',
+        background: '#2c3236',
         boxShadow: '0 3px 5px 2px rgba(0,0,0, .3)',
         marginBottom: '1rem',
         display: 'flex',
