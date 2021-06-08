@@ -16,13 +16,13 @@ const BasicLink = ( { post } ) => {
     const textPost = parse(htmlElements);
 
     return (
-        <Grid item sm={8}>
+        <Grid item sm={8} style={{ overflow: 'hidden', textAlign: 'justify' }}>
             <PostTitle post={post} />
             
             
-                
+            
             {textPost}
-                
+            
            
             
             <PostLinks post={post} />
