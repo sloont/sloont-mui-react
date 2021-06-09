@@ -10,6 +10,7 @@ const postsSlice = createSlice({
     initialState: {
         list: [],
         loading: false,
+
         lastFetch: null
     },
     reducers: {
@@ -25,7 +26,7 @@ const postsSlice = createSlice({
 
         postsRequestFailed: (posts) => {
             posts.loading = false;
-        }
+        },
     }
 });
 

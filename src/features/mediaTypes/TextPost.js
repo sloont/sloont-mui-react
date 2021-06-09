@@ -38,7 +38,7 @@ const BasicLink = ( { post } ) => {
     
     const htmlElements = parsingFunction(post.selftext);
     
-    const decodedPost = htmlElements.replace(/____/g, '');
+    const decodedPost = htmlElements.replace(/_+/g, '_');
     const textPost = parse(decodedPost);
 
     return (
