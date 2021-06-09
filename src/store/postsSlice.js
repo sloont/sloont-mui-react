@@ -4,6 +4,7 @@ import { apiCallBegan } from './api';
 import moment from 'moment';
 
 
+
 //slice / reducers
 const postsSlice = createSlice({
     name: 'posts',
@@ -109,5 +110,4 @@ export default postsSlice.reducer;
 //should return state.entities.posts.list
 
 export const selectPostsList = (state) => state.entities.posts.list;
-
 

@@ -37,11 +37,9 @@ const Post = ( { post, index } ) => {
                 <Grid container>
                     <Voting post={post}/>
                     {mediaContent}
-                    <Grid item sm={2}>
-                        <Comments post={post} index={index}/>
-                    </Grid>
+                    <Grid item sm={2} />
                 </Grid>
-
+                <Comments post={post} index={index}/>
             </Card>
         </Grid>
     );
