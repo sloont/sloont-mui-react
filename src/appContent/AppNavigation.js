@@ -16,8 +16,8 @@ const useStyles = makeStyles({
     },
     subredditCardWrapper: {
         position: 'sticky',
-        top: '-71%',
-        alignSelf: 'flex-start'        //This is a hack. Needs to change based on number of components and their sizes
+        top: '-71vh',          //This is a hack. Needs to change based on number of components and their sizes
+        alignSelf: 'flex-start'        
     
     },
     cardStyle: {

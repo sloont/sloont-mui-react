@@ -19,7 +19,7 @@ const PostLinks = ({ post }) => {
         <CardContent className={classes.linkBar}>
             <Typography variant="overline" display="block">{"U/" + post.author}</Typography>
             
-            <Typography variant="overline" color="text" display="block">{post.subreddit_name_prefixed}</Typography>
+            <Typography variant="overline" color="textPrimary" display="block">{post.subreddit_name_prefixed}</Typography>
         </CardContent>
     );
 }

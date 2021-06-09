@@ -10,9 +10,10 @@ import Voting from '../features/Voting';
 import ImgurGif from './mediaTypes/ImgurGif';
 import LinkWithThumbnail from './mediaTypes/LinkWithThumbnail';
 import VredditAsVideo from './mediaTypes/VredditAsVideo';
+import Comments from './Comments';
 
 
-const Post = ( { post } ) => {
+const Post = ( { post, index } ) => {
 
     
     let mediaContent = <LinkWithThumbnail post={post}/>
@@ -36,7 +37,9 @@ const Post = ( { post } ) => {
                 <Grid container>
                     <Voting post={post}/>
                     {mediaContent}
-                    <Grid item sm={2}></Grid>
+                    <Grid item sm={2}>
+                        <Comments post={post} index={index}/>
+                    </Grid>
                 </Grid>
 
             </Card>

@@ -46,6 +46,7 @@ export const loadSubreddits = () => (dispatch, getState) => {
             onStart: subredditsRequested.type,
             onSuccess: subredditsReceived.type,
             onError: subredditRequestFailed.type,
+            content: 'subreddits'
         })
     );
 };

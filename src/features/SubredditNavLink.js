@@ -43,7 +43,7 @@ const SubredditNavLink = ({ subreddit, isLast }) => {
         <div>
         <CardContent className={classes.individualSub}>
             {subIcon}
-            <Typography variant="overline" color="text">
+            <Typography variant="overline" color="textPrimary">
                 {subreddit.display_name_prefixed}
             </Typography>
         </CardContent>

@@ -21,7 +21,7 @@ const AppContent = () => {
     return (
         
             <Grid container item sm={8} justify="center" spacing={3}>
-                {postsList.map((post, index) => <Post post={post} key={index} />)}
+                {postsList.map((post, index) => <Post post={post} key={index} index={index}/>)}
             </Grid>
     );
 }

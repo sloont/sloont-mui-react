@@ -5,11 +5,22 @@ const api = ({ dispatch }) => (next) => async (action) => {
 
     if (action.type !== actions.apiCallBegan.type) return next(action);
 
-    const { url, method, data, onStart, onSuccess, onError } = action.payload;
+    const { 
+        url,
+        method, 
+        data, 
+        content, 
+        index, 
+        onStart, 
+        onSuccess, 
+        onError 
+    } = action.payload;
 
-    if (onStart) {
-        dispatch({ type: onStart})
-    }
+    if (onStart && content === 'comments') {
+        dispatch({ type: onStart, payload: { index }})
+    } 
+    
+    else if (onStart) dispatch({ type: onStart });
 
     next(action);
 
@@ -21,14 +32,45 @@ const api = ({ dispatch }) => (next) => async (action) => {
             data
 
         });
-        const postData = response.data.data.children.map((post) => {return post.data})
-        console.log(postData);
+        
 
-        dispatch(actions.apiCallSuccess(postData));
+        
+        if (content === "posts") {
+            const postsData = response.data.data.children.map((item) => item.data);
+            //now we need to set each post up with a comments array and a loading bool.
+            const postsWithComments = postsData.map((post) => ({
+                ...post,
+                comments: [],
+                loadingComments: false,
+                lastFetchComments: null,
+                showingComments: false,
+            }));
+    
+            dispatch(actions.apiCallSuccess(postsWithComments));
+            
+            if (onSuccess) dispatch({ type: onSuccess, payload: postsWithComments });
+            
 
-        if (onSuccess) {
-            dispatch({ type: onSuccess, payload: postData });
         }
+
+        if (content === "subreddits") {
+            const subredditsData = response.data.data.children.map((item) => item.data);
+
+            dispatch(actions.apiCallSuccess(subredditsData));
+    
+            if (onSuccess) dispatch({ type: onSuccess, payload: subredditsData });
+
+        }
+
+        if (content === "comments") {
+           
+            const comments = response.data[1].data.children.map((item) => item.data);
+            
+            dispatch(actions.apiCallSuccess({ comments, index }));
+
+            if (onSuccess) dispatch({ type: onSuccess, payload: { comments, index }})
+        }
+
 
     } catch (error) {
 
