@@ -41,7 +41,7 @@ const LinkWithThumbnail = ( { post } ) => {
 
     let thumbnailSRC = post.thumbnail;
 
-    if (!thumbnailSRC || thumbnailSRC === "default" || thumbnailSRC === "(unknown)") thumbnailSRC = placeholder;
+    if (!thumbnailSRC || thumbnailSRC === "default" || thumbnailSRC === "(unknown)" || thumbnailSRC === "self") thumbnailSRC = placeholder;
 
     return (
         <Grid item sm={8}>
