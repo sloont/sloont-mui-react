@@ -43,7 +43,7 @@ const api = ({ dispatch }) => (next) => async (action) => {
     
             dispatch(actions.apiCallSuccess(postsWithComments));
             
-            if (onSuccess) dispatch({ type: onSuccess, payload: postsWithComments });
+            if (onSuccess) dispatch({ type: onSuccess, payload: { postsWithComments, url }});
             
 
         }

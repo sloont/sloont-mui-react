@@ -12,6 +12,7 @@ const postsSlice = createSlice({
         list: [],
         loading: false,
         lastFetch: null,
+        stateURL: "",
         
     },
     reducers: {
@@ -20,9 +21,10 @@ const postsSlice = createSlice({
         },
 
         postsReceived: (posts, action) => {
-            posts.list = action.payload;
+            posts.list = action.payload.postsWithComments;
             posts.loading = false;
             posts.lastFetch = Date.now();
+            posts.stateURL = action.payload.url
         },
 
         postsRequestFailed: (posts) => {
@@ -49,11 +51,11 @@ const postsSlice = createSlice({
 //thunk action creators
 
 export const loadPosts = (url = '/r/all') => (dispatch, getState) => {
-    const { lastFetch } = getState().entities.posts; 
+    const { lastFetch, stateURL } = getState().entities.posts; 
 
     const diffInMinutes = moment().diff(moment(lastFetch), 'minutes');
 
-    if (diffInMinutes < 10) {
+    if (diffInMinutes < 10 && stateURL === url) {
         console.log("Using cached data for posts");
         return;
     };

@@ -1,9 +1,12 @@
 import React from 'react';
-import img from '../features/mediaTypes/images/subredditThumbnail.png';
+
 import { CardContent, Typography, Divider, } from '@material-ui/core';
 import { FaReddit } from 'react-icons/fa';
 import { makeStyles } from '@material-ui/core/styles';
 import { lightenColor } from '../helpers/manipulateColor';
+import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { loadPosts } from '../store/postsSlice';
 
 const useStyles = makeStyles({
     individualSub: {
@@ -14,6 +17,7 @@ const useStyles = makeStyles({
 });
 
 const SubredditNavLink = ({ subreddit, isLast }) => {
+    const dispatch = useDispatch();
     const classes = useStyles();
     const subThemeColor = subreddit.primary_color ? lightenColor(subreddit.primary_color) : "#ff905b";
     let subIcon;
@@ -35,6 +39,13 @@ const SubredditNavLink = ({ subreddit, isLast }) => {
                 fontSize='2rem' //controls the size not height/width (32px);
             />
         )
+    };
+
+    const linkToSub = (e) => {
+        dispatch(loadPosts("/" + e.target.innerHTML));
+        window.scrollTo(0, 0);
+            
+         
     }
 
     const conditionalDivider = !isLast ? <Divider variant="middle"/> : <></>
@@ -43,9 +54,11 @@ const SubredditNavLink = ({ subreddit, isLast }) => {
         <div>
         <CardContent className={classes.individualSub}>
             {subIcon}
-            <Typography variant="overline" color="textPrimary">
+            <NavLink to="/snips" style={{ textDecoration: 'none' }}>
+            <Typography variant="overline" color="textPrimary" onClick={(e)=> linkToSub(e)}>
                 {subreddit.display_name_prefixed}
             </Typography>
+            </NavLink>
         </CardContent>
         {conditionalDivider}
         </div>
