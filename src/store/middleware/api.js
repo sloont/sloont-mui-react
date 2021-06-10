@@ -22,14 +22,6 @@ const api = ({ dispatch }) => (next) => async (action) => {
     next(action);
 
     try {
-        // const response = await axios.request({      Getting CORS errors with axios
-        //     baseURL: 'https://reddit.com',
-        //     url,
-        //     method,
-        //     data,
-        //     headers: { 'crossorigin' : 'true' }
-
-        // });
 
         const response = await fetch(`https://vast-reaches-35684.herokuapp.com/https://reddit.com${url}`, {
             headers: {

@@ -54,7 +54,7 @@ export const loadPosts = (url = '/r/all') => (dispatch, getState) => {
     const diffInMinutes = moment().diff(moment(lastFetch), 'minutes');
 
     if (diffInMinutes < 10) {
-        console.log("Using cached data");
+        console.log("Using cached data for posts");
         return;
     };
 
@@ -77,7 +77,7 @@ export const loadComments = (index, permalink) => (dispatch, getState) => {
     const diffInMinutes = moment().diff(moment(lastFetchComments), 'minutes;');
 
     if (diffInMinutes < 2 ) {
-        console.log("Using cached data");
+        console.log("Using cached data for comments");
         return;
     };
 

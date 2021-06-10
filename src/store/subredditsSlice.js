@@ -38,8 +38,11 @@ export const loadSubreddits = () => (dispatch, getState) => {
 
     const diffInMinutes = moment().diff(moment(lastFetch), 'minutes');
 
-    if (diffInMinutes < 60) return;
-
+    if (diffInMinutes < 60) {
+        console.log("Using cached data for subreddits");
+        return;
+    }
+    
     dispatch(
         apiCallBegan({
             url: url + '.json',
