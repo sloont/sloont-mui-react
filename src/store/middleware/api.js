@@ -58,7 +58,7 @@ const api = ({ dispatch }) => (next) => async (action) => {
         }
 
         if (content === "comments") {
-           console.log(json)
+    
             const comments = json[1].data.children.map((item) => item.data);
             
             dispatch(actions.apiCallSuccess({ comments, index }));
