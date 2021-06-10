@@ -7,8 +7,6 @@ const api = ({ dispatch }) => (next) => async (action) => {
 
     const { 
         url,
-        method, 
-        data, 
         content, 
         index, 
         onStart, 
@@ -25,18 +23,24 @@ const api = ({ dispatch }) => (next) => async (action) => {
     next(action);
 
     try {
-        const response = await axios.request({
-            baseURL: 'https://reddit.com',
-            url,
-            method,
-            data
+        // const response = await axios.request({      Getting CORS errors with axios
+        //     baseURL: 'https://reddit.com',
+        //     url,
+        //     method,
+        //     data,
+        //     headers: { 'crossorigin' : 'true' }
 
+        // });
+
+        const response = await fetch(`https://vast-reaches-35684.herokuapp.com/https://reddit.com${url}`, {
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest'
+            }
         });
-        
-
+        const json = await response.json();
         
         if (content === "posts") {
-            const postsData = response.data.data.children.map((item) => item.data);
+            const postsData = json.data.children.map((item) => item.data);
             //now we need to set each post up with a comments array and a loading bool.
             const postsWithComments = postsData.map((post) => ({
                 ...post,
@@ -54,7 +58,7 @@ const api = ({ dispatch }) => (next) => async (action) => {
         }
 
         if (content === "subreddits") {
-            const subredditsData = response.data.data.children.map((item) => item.data);
+            const subredditsData = json.data.children.map((item) => item.data);
 
             dispatch(actions.apiCallSuccess(subredditsData));
     
@@ -63,8 +67,8 @@ const api = ({ dispatch }) => (next) => async (action) => {
         }
 
         if (content === "comments") {
-           
-            const comments = response.data[1].data.children.map((item) => item.data);
+           console.log(json)
+            const comments = json[1].data.children.map((item) => item.data);
             
             dispatch(actions.apiCallSuccess({ comments, index }));
 
