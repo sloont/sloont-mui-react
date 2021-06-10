@@ -32,11 +32,16 @@ const useStyles = makeStyles({
     }
 });
 
+
 const LinkWithThumbnail = ( { post } ) => {
     const placeholder = img;
     const classes = useStyles();
 
     const saturatedLink = saturateColor('#75cff8'); //leaving it at saturate(0.2) for now. any more and it looks green
+
+    let thumbnailSRC = post.thumbnail;
+
+    if (!thumbnailSRC || thumbnailSRC === "default" || thumbnailSRC === "(unknown)") thumbnailSRC = placeholder;
 
     return (
         <Grid item sm={8}>
@@ -48,10 +53,10 @@ const LinkWithThumbnail = ( { post } ) => {
                     className={classes.thumbnail}
                     component={'img'}
                     title={post.title}
-                    src={post.thumbnail !== "default" || !post.thumbnail ? post.thumbnail : placeholder}
+                    src={thumbnailSRC}
                 />
                 {/* Probably need some kind of "navigation from page check" */}
-                <Link href={post.url}><Typography variant="body1" style={{ color: saturatedLink }}>{post.domain}</Typography></Link>
+                <Link href={post.url}><Typography variant="body1" style={{ color: saturatedLink }}>{post.domain === 'youtu.be' ? 'youtube.com' : post.domain}</Typography></Link> {/*catching both YT linkes here*/}
             </Card>
 
             <PostLinks post={post} />
