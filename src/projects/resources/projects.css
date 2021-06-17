@@ -26,8 +26,9 @@
 .single-project {
     
     position: relative;
-    background-color: rgba(0,136,169,.7);;
+    background-color: rgba(117, 207, 248, .4);
     height: 100%;
+    border-radius: 4px;
     
     flex: 1 1 33%;
     cursor: pointer;
@@ -89,7 +90,7 @@
 
 .single-project h2 {
     font-size: 2em;
-    color:#0088a9;
+    color:#75cff8;
     margin-bottom: 2em;
 }
 
@@ -106,8 +107,9 @@
 }
 
 .selected-project {
+    border-radius: 4px;
     box-sizing: border-box;
-    background-color: #24252a !important;
+    background-color: #232a2e !important;
     border: 2px solid #edf0f1;
     flex: 0 3 ;
     display: flex;
@@ -147,7 +149,7 @@
 .selected-project a {
     text-decoration: none;
     
-    color: #0088a9;
+    color: #75cff8;
 
 }
 
