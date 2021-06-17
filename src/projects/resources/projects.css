@@ -1,0 +1,160 @@
+
+.projects {
+    height: 100%;
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: .5em;
+    overflow: hidden;
+}
+
+.projects {
+    background: none;
+    
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    text-transform: lowercase;
+    
+}
+
+.single-project {
+    
+    position: relative;
+    background-color: rgba(0,136,169,.7);;
+    height: 100%;
+    
+    flex: 1 1 33%;
+    cursor: pointer;
+}
+
+.single-project:hover {
+    background: none;
+       
+}
+
+.single-project .project-title {
+    font-size: 2em;
+}
+
+.single-project-clone-divwatch {
+    content: "";
+    background: url(./clockGutsSnip.PNG) !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    opacity: 0.5;
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    padding: 0 !important;
+}
+
+.single-project-clone-schedule {
+    content: "";
+    background: url(./generatorSnip.PNG) !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    opacity: 0.5;
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    padding: 0 !important;
+}
+
+.single-project-clone-snake {
+    content: "";
+    background: url(./snakelistsSnip.PNG) !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    opacity: 0.5;
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    padding: 0 !important;
+}
+
+.single-project h2 {
+    font-size: 2em;
+    color:#0088a9;
+    margin-bottom: 2em;
+}
+
+.single-project p {
+    font-size: .75em;
+}
+
+.single-project div {
+    
+    height: 100%;
+    width: 100%;
+    background: none;
+    padding: .25em .25em .25em 1em;
+}
+
+.selected-project {
+    box-sizing: border-box;
+    background-color: #24252a !important;
+    border: 2px solid #edf0f1;
+    flex: 0 3 ;
+    display: flex;
+    gap: 1em;
+    flex-wrap: nowrap;
+    justify-content: center;
+    padding-top: 2em;
+    
+    
+    
+}
+
+
+
+.selected-project .description, .selected-project .snippet {
+    display: inline-block;
+    margin: 2em;
+}
+
+.selected-project .description {
+    flex: 0 1 60%;
+
+    
+    
+}
+
+.selected-project .snippet {
+    flex: 0 2 40%;
+    
+}
+
+.selected-project img {
+    display: inline-flex;
+    width: 90%;
+}
+
+.selected-project a {
+    text-decoration: none;
+    
+    color: #0088a9;
+
+}
+
+.selected-project a h2 {
+    font-size: 1.5em;
+}
+
+.selected-project a h2:hover {
+    color: #edf0f1;
+}
