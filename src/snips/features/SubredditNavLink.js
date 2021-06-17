@@ -3,10 +3,10 @@ import React from 'react';
 import { CardContent, Typography, Divider, } from '@material-ui/core';
 import { FaReddit } from 'react-icons/fa';
 import { makeStyles } from '@material-ui/core/styles';
-import { lightenColor } from '../helpers/manipulateColor';
+import { lightenColor } from '../../helpers/manipulateColor';
 import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { loadPosts } from '../store/postsSlice';
+import { loadPosts } from '../../store/postsSlice';
 
 const useStyles = makeStyles({
     individualSub: {

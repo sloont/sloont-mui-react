@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Accordion, AccordionSummary, AccordionDetails, Typography, Card } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
-import { loadComments } from '../store/postsSlice';
+import { loadComments } from '../../store/postsSlice';
 
 
 // import parsingFunction from '../helpers/parser';

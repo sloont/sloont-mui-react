@@ -5,7 +5,7 @@ import './App.css';
 import { CssBaseline } from '@material-ui/core';
 import { Provider } from 'react-redux';
 
-import Navigation from './mainNavigation/Navigation';
+import Navigation from './snips/mainNavigation/Navigation';
 import {
   BrowserRouter as Router,
   Route,
@@ -14,7 +14,7 @@ import {
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import About from './pages/About';
-import Snips from './pages/Snips';
+import Snips from './snips/Snips';
 import store from './store/store';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 

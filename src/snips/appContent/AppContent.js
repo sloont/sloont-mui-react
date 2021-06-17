@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 //import './pages.css';
 
 import { Grid } from '@material-ui/core';
-import { loadPosts, selectPostsList } from '../store/postsSlice';
+import { loadPosts, selectPostsList } from '../../store/postsSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import Post from '../features/Post';
 

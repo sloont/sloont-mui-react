@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import PostLinks from '../PostLinks';
 import PostTitle from '../PostTitle';
 import img from './images/placeholderThumbnail.jpg'
-import { saturateColor } from '../../helpers/manipulateColor';
+import { saturateColor } from '../../../helpers/manipulateColor';
 
 //We're going to use this as the third tier background color #56575e
 

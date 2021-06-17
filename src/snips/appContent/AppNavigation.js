@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Grid, Card } from '@material-ui/core';
-import { loadSubreddits, selectSubredditsList } from '../store/subredditsSlice';
+import { loadSubreddits, selectSubredditsList } from '../../store/subredditsSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 

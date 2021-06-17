@@ -5,8 +5,8 @@ import { Container, Typography, Grid } from '@material-ui/core';
 
 
 
-import AppContent from '../appContent/AppContent';
-import AppNavigation from '../appContent/AppNavigation';
+import AppContent from './appContent/AppContent';
+import AppNavigation from './appContent/AppNavigation';
 
 
 

@@ -3,7 +3,7 @@ import { Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import parse from 'html-react-parser';
-import { parsingFunction } from '../../helpers/parser';
+import { parsingFunction } from '../../../helpers/parser';
 
 import PostLinks from '../PostLinks';
 import PostTitle from '../PostTitle';
@@ -27,6 +27,14 @@ const useStyles = makeStyles({
             '& a': {
                 textDecoration: 'none',
                 color: '#75cff8'
+            }
+        },
+        '& h1': {
+            '& strong': {
+                '& a': {
+                    // textDecoration: 'none',
+                    color: '#75cff8'
+                }
             }
         }
     },
