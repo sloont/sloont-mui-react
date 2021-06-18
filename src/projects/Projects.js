@@ -14,18 +14,28 @@ const Projects = () => {
     const [toggleArray, setToggleArray] = useState(initialState);
 
     const handleClick = (e, index) => {
-        setToggleArray(() => {
+        setToggleArray((prevState) => {
             const newToggles = [];
-            for (let i = 0; i < toggleArray.length; i++) {
-                if (i === index) newToggles.push(true);
-                else newToggles.push(false);
+            if (prevState[index]) {
+                for (let i = 0; i < toggleArray.length; i++) {
+                    newToggles.push(false);
+                }
             }
-            console.log(newToggles);
+
+            else {
+                for (let i = 0; i < toggleArray.length; i++) {
+                    if (i === index) newToggles.push(true);
+                    else newToggles.push(false);
+                }
+                
+                
+            }
             return newToggles;
         });
+        
         console.log(index)
     }
-
+    console.log(toggleArray);
     return (
         
             <section className="projects">

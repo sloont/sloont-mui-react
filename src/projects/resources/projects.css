@@ -43,9 +43,8 @@
     font-size: 2em;
 }
 
-.single-project-clone-divwatch {
+.clone {
     content: "";
-    background: url(./clockGutsSnip.PNG) !important;
     background-repeat: no-repeat !important;
     background-size: cover !important;
     opacity: 0.5;
@@ -54,37 +53,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: -1;
-    padding: 0 !important;
-}
-
-.single-project-clone-schedule {
-    content: "";
-    background: url(./generatorSnip.PNG) !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-    opacity: 0.5;
-    position:absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    padding: 0 !important;
-}
-
-.single-project-clone-snake {
-    content: "";
-    background: url(./snakelistsSnip.PNG) !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-    opacity: 0.5;
-    position:absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
+    z-index: 0;
     padding: 0 !important;
 }
 
