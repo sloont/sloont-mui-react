@@ -53,7 +53,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 0;
+    z-index: -1;
     padding: 0 !important;
 }
 
@@ -129,4 +129,10 @@
 
 .selected-project a h2:hover {
     color: #edf0f1;
+}
+
+.snippet {
+    box-shadow: rgb(0 0 0 / 30%) 0px 3px 5px 2px;
+    width: 100%;
+    max-width: 320px;
 }

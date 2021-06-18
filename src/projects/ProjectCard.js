@@ -16,7 +16,7 @@ const ProjectCard = ({ project, toggled, handleClick, index }) => {
             </div>
 
             <div className="snippet">
-                <img src={project.img.src} alt={project.img.alt}/>
+                <img src={project.img.src} alt={project.img.alt} />
             </div>
         </article>
     );

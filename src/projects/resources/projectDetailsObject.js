@@ -6,12 +6,13 @@ const projectDetails = {
         title: 'reddit snips',
         description: {
             text: 'JavaScript',
-            link: 'react-router',
+            link: 'snips',
         },
         img: {
-            src: './redditSnips.PNG',
+            src: 'https://i.imgur.com/YZx7nxH.png',
             alt: 'the reddit snips project',
-        }
+        },
+        codesnip: 'https://i.imgur.com/ApQZOvE.png'
     },
     snake: {
         id: 'snake',
