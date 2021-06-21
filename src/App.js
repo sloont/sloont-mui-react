@@ -11,7 +11,7 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
-import Home from './pages/Home';
+import Home from './home/Home';
 import Projects from './projects/Projects';
 import About from './pages/About';
 import Snips from './snips/Snips';
