@@ -14,6 +14,7 @@ const useStyles = makeStyles({
         background: '#232a2e',
         width: 1000,
         height: 700,
+        cursor: 'pointer',
         
     }
 });
