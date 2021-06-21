@@ -4,16 +4,22 @@ import { checkCollision, resolveCollision, adjustPositions } from './physics';
 import { checkMouseClick, applyForceWithClick } from './mousePhysics';
 import { generateOrbInformation, orbInformation } from './orbInformation';
 import SVGS from './SVGS';
+import { Grid } from '@material-ui/core';
+import PlainText from './PlainText';
 
 const useStyles = makeStyles({
+    grid: {
+        margin: 0,
+        width: '100% !important',
+        height: '100% !important'
+    },
+
     canvas: {
-        
-        margin: '3rem',
         borderRadius: 4,
         boxShadow: '0 3px 5px 2px rgba(0,0,0, .3)',
         background: '#232a2e',
-        width: 1000,
-        height: 700,
+        width: '100%',
+        height: '100%',
         cursor: 'pointer',
         
     }
@@ -197,7 +203,17 @@ const Home = () => {
 
     return (
         <>
-            <canvas ref={ref} className={classes.canvas} id="canvas"></canvas>
+            <Grid container 
+                spacing={3}
+                direction="row"
+                justify="center"
+                alignItems="stretch"
+                className={classes.grid}
+            >
+                <Grid item xs={12} sm={8}><canvas ref={ref} className={classes.canvas} id="canvas"></canvas></Grid>
+                <Grid item xs={12} sm={3}><PlainText /></Grid>
+                
+            </Grid>
             <SVGS />
         </>
     )
