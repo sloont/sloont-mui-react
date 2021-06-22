@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core';
 import { checkCollision, resolveCollision, adjustPositions } from './physics';
 import { checkMouseClick, applyForceWithClick } from './mousePhysics';
@@ -6,10 +6,12 @@ import { generateOrbInformation, orbInformation } from './orbInformation';
 import SVGS from './SVGS';
 import { Grid } from '@material-ui/core';
 import PlainText from './PlainText';
+import _debounce from 'lodash.debounce';
 
 const useStyles = makeStyles({
     grid: {
-        margin: 0,
+        // margin: 0,
+        paddingRight: '1rem',
         width: '100% !important',
         height: '100% !important'
     },
@@ -39,9 +41,10 @@ const getPixelRatio = context => {
 };
 
 const Home = () => {
-
+    
     const classes = useStyles();
     let ref = useRef();
+    let gridItemRef = useRef();
 
     ////////////////////////////////////////////////
     //Lets make a mouse object and a mousemove event listener to track it
@@ -121,24 +124,44 @@ const Home = () => {
         }
                 
     }
+    ///////////////////////////////////////////////////////
+
     const orbCollection = [];
+    const [resized, setResized] = useState(false);
 
     useEffect(() => {
 
         let canvas = ref.current;
+        let gridItem = gridItemRef.current;
         let context = canvas.getContext('2d');
         let backgroundCTX = canvas.getContext('2d');
 
+        
+
+        console.log(gridItem.clientWidth);
+        console.log(gridItem.clientHeight);
+
+        const resizer = _debounce((event) => {
+            event.stopPropagation();
+            setResized(true);
+            return resized;
+        }, 1000);
+        window.addEventListener('resize', resizer);
+
         let ratio = getPixelRatio(context);
-        let width = getComputedStyle(canvas)
-            .getPropertyValue('width')
-            .slice(0, -2);
+        // let width = getComputedStyle(canvas)
+        //     .getPropertyValue('width')
+        //     .slice(0, -2);
         let height = getComputedStyle(canvas)
             .getPropertyValue('height')
             .slice(0, -2);
+        let width = gridItem.clientWidth;
+        // let height = gridItem.clientHeight;
          
         canvas.width = width * ratio;
         canvas.height = height * ratio;
+
+
         canvas.style.width = `${width}px`;
         canvas.style.height = `${height}px`;
 
@@ -162,7 +185,7 @@ const Home = () => {
             }
 
         }
-        canvas.addEventListener("mousedown", (event) => {
+        const mouseClick = (event) => {
             const rect = canvas.getBoundingClientRect();
             mouse.x = event.clientX - rect.left;
             mouse.y = event.clientY - rect.top;
@@ -173,9 +196,10 @@ const Home = () => {
                     applyForceWithClick(ballA, mouse);
                     return;
                 }
-            })
+            });
+        }
+        canvas.addEventListener("mousedown", mouseClick)
             
-        });
         let requestId;
         const animate = () => {
             context.clearRect(0, 0, canvas.width, canvas.height);
@@ -200,20 +224,23 @@ const Home = () => {
     
         return () => {
             cancelAnimationFrame(requestId);
+            setResized(false);
+            window.removeEventListener('resize', resizer);
+            canvas.removeEventListener('mousedown', mouseClick);
         };
     });
 
     return (
         <>
             <Grid container 
-                spacing={3}
+                // spacing={3}
                 direction="row"
                 justify="center"
                 alignItems="stretch"
                 className={classes.grid}
             >
-                <Grid item xs={12} sm={8}><canvas ref={ref} className={classes.canvas} id="canvas"></canvas></Grid>
-                <Grid item xs={12} sm={3}><PlainText /></Grid>
+                <Grid ref={gridItemRef} item xs={12} sm={12} md={8}><canvas ref={ref} className={classes.canvas} id="canvas"></canvas></Grid>
+                <Grid item xs={12} sm={12} md={3}><PlainText /></Grid>
                 
             </Grid>
             <SVGS />

@@ -11,7 +11,9 @@ const useStyles = makeStyles({
         background: '#232a2e',
         width: '100%',
         height: 'calc(100% - 6px)',
-        padding: '4px'
+        padding: '4px',
+        marginLeft: '1rem',
+        
     }
 })
 const PlainText = () => {
@@ -39,6 +41,7 @@ const PlainText = () => {
             },
 
             tools : {    
+
                 chrome : 4,
                 bash : 3,
                 git : 4,
