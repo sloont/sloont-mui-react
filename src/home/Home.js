@@ -163,8 +163,10 @@ const Home = () => {
 
         }
         canvas.addEventListener("mousedown", (event) => {
-            mouse.x = event.x - 80;
-            mouse.y = event.y - 144;
+            const rect = canvas.getBoundingClientRect();
+            mouse.x = event.clientX - rect.left;
+            mouse.y = event.clientY - rect.top;
+            console.log(mouse.x, mouse.y);
             orbCollection.forEach(ballA => {
                 checkMouseClick(ballA, mouse);
                 if (checkMouseClick(ballA, mouse)) {
