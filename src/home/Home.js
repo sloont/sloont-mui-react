@@ -11,9 +11,11 @@ import _debounce from 'lodash.debounce';
 const useStyles = makeStyles({
     grid: {
         // margin: 0,
-        paddingRight: '1rem',
+        // paddingRight: '1rem',
         width: '100% !important',
-        height: '100% !important'
+        height: '100% !important',
+        overflow: 'hidden'
+        
     },
 
     canvas: {
@@ -23,6 +25,7 @@ const useStyles = makeStyles({
         width: '100%',
         height: '100%',
         cursor: 'pointer',
+        maxHeight: 'calc(100vh - 8rem)'
         
     }
 });
@@ -145,25 +148,28 @@ const Home = () => {
             event.stopPropagation();
             setResized(true);
             return resized;
-        }, 1000);
+        }, 500);
         window.addEventListener('resize', resizer);
 
+        // canvas.style.maxHeight = 'calc(100vh - 8rem)';
         let ratio = getPixelRatio(context);
         // let width = getComputedStyle(canvas)
         //     .getPropertyValue('width')
         //     .slice(0, -2);
-        let height = getComputedStyle(canvas)
-            .getPropertyValue('height')
-            .slice(0, -2);
+        // let height = getComputedStyle(canvas)
+        //     .getPropertyValue('height')
+        //     .slice(0, -2);
         let width = gridItem.clientWidth;
-        // let height = gridItem.clientHeight;
-         
+        let height = gridItem.clientHeight;
+        console.log(ratio);
+        
         canvas.width = width * ratio;
-        canvas.height = height * ratio;
+        canvas.height = height;
 
 
-        canvas.style.width = `${width}px`;
-        canvas.style.height = `${height}px`;
+        canvas.style.width = `${canvas.width}px`;
+        canvas.style.height = `${canvas.height}px`;
+        
 
         generateOrbInformation();
         if (orbCollection.length < 1) {
@@ -239,7 +245,7 @@ const Home = () => {
                 alignItems="stretch"
                 className={classes.grid}
             >
-                <Grid ref={gridItemRef} item xs={12} sm={12} md={8}><canvas ref={ref} className={classes.canvas} id="canvas"></canvas></Grid>
+                <Grid ref={gridItemRef} item xs={12} sm={12} md={7}><canvas ref={ref} className={classes.canvas} id="canvas"></canvas></Grid>
                 <Grid item xs={12} sm={12} md={3}><PlainText /></Grid>
                 
             </Grid>

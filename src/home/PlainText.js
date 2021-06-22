@@ -9,10 +9,11 @@ const useStyles = makeStyles({
         borderRadius: 4,
         boxShadow: '0 3px 5px 2px rgba(0,0,0, .3)',
         background: '#232a2e',
-        width: '100%',
         height: 'calc(100% - 6px)',
         padding: '4px',
         marginLeft: '1rem',
+        
+        
         
     }
 })
