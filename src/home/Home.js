@@ -159,35 +159,16 @@ const Home = () => {
         let canvas = ref.current;
         let gridItem = gridItemRef.current;
 
-
-        
-
-        
-
         console.log(gridItem.clientWidth);
         console.log(gridItem.clientHeight);
 
-        // canvas.style.maxHeight = 'calc(100vh - 8rem)';
-        
-        // let width = getComputedStyle(canvas)
-        //     .getPropertyValue('width')
-        //     .slice(0, -2);
-        // let height = getComputedStyle(canvas)
-        //     .getPropertyValue('height')
-        //     .slice(0, -2);
-        
         let height = gridItem.clientHeight;
-        // let width = gridItem.clientHeight;
-        
-        // canvas.width = width;
-        // canvas.height = height;
+
         canvas.width = height * gridItem.clientWidth / gridItem.clientHeight;
         canvas.height = height;
 
         canvas.style.width = `${canvas.width}px`;
         canvas.style.height = `${canvas.height}px`;
-
-        
         
         let context = canvas.getContext('2d');
         let backgroundCTX = canvas.getContext('2d');
