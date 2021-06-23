@@ -12,6 +12,7 @@ const useStyles = makeStyles({
         height: 'calc(100% - 6px)',
         padding: '4px',
         marginLeft: '1rem',
+        overflow: 'hidden'
         
         
         
@@ -66,7 +67,7 @@ const PlainText = () => {
     return (
         
         <Paper className={classes.plainText}>
-            {jsonSkills}
+            {/* {jsonSkills} */}
         </Paper>
     
     );

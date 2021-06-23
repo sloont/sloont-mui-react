@@ -124,7 +124,7 @@ const Home = () => {
     const [resized, setResized] = useState(false);
 
 
-    const generateOrbs = (canvas, context, backgroundCTX) => {
+    const generateOrbs = (canvas, context, backgroundCTX, gridItem) => {
 
         if (orbCollection.length < 1 || resized === true) {
             
@@ -137,7 +137,7 @@ const Home = () => {
 
             for (let i = 0; i < orbIds.length; i++) {
                 const x = orbInformation[orbIds[i]].skill;
-                let skillSize = Math.sqrt(Math.sqrt(Math.sqrt( x * x * x * x * x * x * x * x))) * 10; //this is x ^ ( 4/3 ) * 10
+                let skillSize = Math.sqrt(Math.sqrt(Math.sqrt( x * x * x * x * x * x * x * x))) * 20 / ( 1 + 1 / (gridItem.clientWidth / gridItem.clientHeight))
                 let randomx = randomNumber(skillSize, (canvas.width - skillSize));
                 let randomy = randomNumber(skillSize, (canvas.height - skillSize));
                 orbCollection.push(new Orb(randomx, randomy, skillSize, 1, orbInformation[orbIds[i]].image, context, backgroundCTX, canvas));
@@ -194,7 +194,7 @@ const Home = () => {
         
 
         generateOrbInformation();
-        generateOrbs(canvas, context, backgroundCTX);
+        generateOrbs(canvas, context, backgroundCTX, gridItem);
 
         const mouseClick = (event) => {
             const rect = canvas.getBoundingClientRect();
