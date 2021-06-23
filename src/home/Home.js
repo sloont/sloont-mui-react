@@ -134,10 +134,10 @@ const Home = () => {
             }
 
             const orbIds = Object.keys(orbInformation);
-            const aspectRatio = gridItem.clientWidth < gridItem.clientHeight ? gridItem.clientWidth / gridItem.clientHeight : gridItem.clientHeight / gridItem.clientWidth;
+
             for (let i = 0; i < orbIds.length; i++) {
                 const x = orbInformation[orbIds[i]].skill;
-                let skillSize = Math.sqrt(Math.sqrt(Math.sqrt( x * x * x * x * x * x * x * x))) * 20 / ( 1 + 1 / (aspectRatio))
+                let skillSize = Math.sqrt(Math.sqrt(Math.sqrt( x * x * x * x * x * x * x * x))) * (gridItem.clientHeight + gridItem.clientWidth) / 150;
                 let randomx = randomNumber(skillSize, (canvas.width - skillSize));
                 let randomy = randomNumber(skillSize, (canvas.height - skillSize));
                 orbCollection.push(new Orb(randomx, randomy, skillSize, 1, orbInformation[orbIds[i]].image, context, backgroundCTX, canvas));
