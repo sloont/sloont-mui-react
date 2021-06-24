@@ -10,14 +10,9 @@ import _debounce from 'lodash.debounce';
 
 const useStyles = makeStyles({
     grid: {
-        // margin: 0,
-        // paddingRight: '1rem',
         width: '100% !important',
         height: '100% !important',
-
-        
     },
-
     canvas: {
         borderRadius: 4,
         boxShadow: '0 3px 5px 2px rgba(0,0,0, .3)',
@@ -229,9 +224,10 @@ const Home = () => {
                 direction="row"
                 justify="center"
                 className={classes.grid}
+                // style={{ overflow: 'hidden' }}
             >
-                <Grid ref={gridItemRef} item xs={12} sm={9} md={9}><canvas ref={ref} className={classes.canvas} id="canvas"></canvas></Grid>
-                <Grid item xs={12} sm={3} md={3}><PlainText /></Grid>
+                <Grid ref={gridItemRef} item xs={12} sm={7} md={8} lg={9} xl={9}><canvas ref={ref} className={classes.canvas} id="canvas"></canvas></Grid>
+                <Grid item xs={12} sm={4} md={3} lg={3} xl={2}><PlainText /></Grid>
                 
             </Grid>
             <SVGS />

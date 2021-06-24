@@ -4,3 +4,24 @@ main {
     margin: 6rem 2rem 2rem 2rem;
     justify-content: center;
 }
+
+::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: #232a2e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1a2125;
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #75cff8;
+}
+::-webkit-scrollbar-corner {
+    background: #232a2e;
+}

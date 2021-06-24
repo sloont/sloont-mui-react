@@ -9,13 +9,18 @@ const useStyles = makeStyles({
         borderRadius: 4,
         boxShadow: '0 3px 5px 2px rgba(0,0,0, .3)',
         background: '#232a2e',
-        height: 'calc(100% - 6px)',
+        height: 0,
+        minHeight: 'calc(100% - 6px)',
         padding: '4px',
         marginLeft: '1rem',
-        overflow: 'hidden'
-        
-        
-        
+        overflow: 'auto',
+        '& div': {
+            '& pre': {
+                '& code': {
+                    width: '100%'
+                }
+            }
+        }
     }
 })
 const PlainText = () => {
@@ -67,7 +72,8 @@ const PlainText = () => {
     return (
         
         <Paper className={classes.plainText}>
-            {/* {jsonSkills} */}
+            <div>{jsonSkills}</div>
+            
         </Paper>
     
     );
