@@ -25,7 +25,7 @@ const projectDetails = {
             src: 'https://i.imgur.com/xOXPA7l.png',
             alt: 'the snake lists project',
         },
-        codesnip: 'https://i.imgur.com/k53yhSC.png'
+        codesnip: 'https://i.imgur.com/TXu1DOQ.png'
     },
     schedule: {
         id: 'schedule',
@@ -38,7 +38,7 @@ const projectDetails = {
             src: 'https://i.imgur.com/krcX45q.png',
             alt: 'the schedule generator project',
         },
-        codesnip: 'https://i.imgur.com/Be4g1O0.png'
+        codesnip: 'https://i.imgur.com/Te15w9o.png'
     },
     divwatch: {
         id: 'divwatch',
@@ -51,9 +51,11 @@ const projectDetails = {
             src: 'https://i.imgur.com/WcGtE2y.png',
             alt: 'the div watch project',
         },
-        codesnip: 'https://i.imgur.com/vc0d4cx.png'
+        codesnip: 'https://i.imgur.com/ey0GQIS.png'
     },
     
 }
 
 export default projectDetails;
+
+//orbs https://i.imgur.com/smGxlt9.png
