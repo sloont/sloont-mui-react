@@ -185,7 +185,7 @@ const Home = () => {
             orbCollection.forEach(ballA => {
                 checkMouseClick(ballA, mouse);
                 if (checkMouseClick(ballA, mouse)) {
-                    applyForceWithClick(ballA, mouse);
+                    applyForceWithClick(ballA, mouse, gridItem);
                     return;
                 }
             });

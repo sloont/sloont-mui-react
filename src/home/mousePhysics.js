@@ -4,7 +4,7 @@ export const checkMouseClick = (ballA, mouse) => {
     return magnitude < ballA.radius;
 }
 
-export const applyForceWithClick = (ballA, mouse) => {
+export const applyForceWithClick = (ballA, mouse, gridItem) => {
     let normal = [(mouse.x - ballA.xpos), (mouse.y - ballA.ypos)];
     const magnitude = Math.sqrt((normal[0] * normal[0]) + (normal[1] * normal[1]));
     normal = [(normal[0] / magnitude) , (normal[1] / magnitude)];
@@ -12,7 +12,7 @@ export const applyForceWithClick = (ballA, mouse) => {
     const relativeVelocity = [ballA.dx, ballA.dy];
     const velocityOnNormal = (relativeVelocity[0] * normal[0]) + (relativeVelocity[1] * normal[1]);
 
-    let j =  40 + velocityOnNormal;
+    let j =  (gridItem.clientHeight + gridItem.clientWidth) / 40 + velocityOnNormal;
     j /= (1 / ballA.radius);
 
     const impulse = [(j * normal[0]), (j * normal[1])];
