@@ -125,8 +125,8 @@ const About = () => {
         canvas.style.height = `${canvas.height}px`;
         
         let context = canvas.getContext('2d');
-    
-        let orb = new Orb(30, 30, (gridItem.clientHeight + gridItem.clientWidth) / 8 , 1, image, context, canvas);
+        let radius = (gridItem.clientHeight + gridItem.clientWidth) / 10
+        let orb = new Orb(canvas.width / 2, canvas.height - radius/2, radius , 0, image, context, canvas);
 
         const mouseClick = (event) => {
             const rect = canvas.getBoundingClientRect();
@@ -163,12 +163,12 @@ const About = () => {
 
     return (
         <Grid container spacing={3} style={{ justifyContent: "center", height: '100%' }}>
-            <Grid item ref={gridItemRef} sm={3} className={classes.grid}>
+            <Grid item ref={gridItemRef} xs={12} sm={4} className={classes.grid}>
                 <canvas ref={ref} className={classes.canvas} id="canvas"></canvas>
             </Grid>
-            <Grid item sm={6} style={{ height: 0, minHeight: 'calc(100% + 1.5rem' }}>
-                <Paper style={{ overflow: 'auto', padding: '2rem', borderRadius: 4, boxShadow: '0 3px 5px 2px rgba(0,0,0, .3)', width: '100%', height: '100%' }}>
-                    <Typography gutterBottom variant='h4' align='center' style={{ padding : 4 }}>what... or who... is sloont?</Typography>
+            <Grid item xs={12} sm={6} style={{ height: 0, minHeight: 'calc(100% + 1.5rem' }}>
+                <Paper style={{ textAlign: 'justify', overflow: 'auto', padding: '2rem', borderRadius: 4, boxShadow: '0 3px 5px 2px rgba(0,0,0, .3)', width: '100%', height: '100%' }}>
+                    <Typography gutterBottom variant='h4' align='center' style={{ padding : 4 }}>what is sloont?</Typography>
                     <Typography>well, it's me. to be honest, i don't really know about the name. it's old and has stuck around for a long time.</Typography>
                     <Typography>i'm colin.</Typography>
                     <br />
