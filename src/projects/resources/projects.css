@@ -25,7 +25,7 @@
 .single-project {
     
     position: relative;
-    
+    background-color: rgba(0, 0, 0, .06);
     height: 100%;
     border-radius: 4px;
     
