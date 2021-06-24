@@ -14,13 +14,7 @@ const useStyles = makeStyles({
         padding: '4px',
         marginLeft: '1rem',
         overflow: 'auto',
-        '& div': {
-            '& pre': {
-                '& code': {
-                    width: '100%'
-                }
-            }
-        }
+        
     }
 })
 const PlainText = () => {
