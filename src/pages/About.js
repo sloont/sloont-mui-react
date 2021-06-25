@@ -169,9 +169,9 @@ const About = () => {
             <Grid item container xs={12} sm={6} style={{ height: 0, minHeight: '100%'}}>
                 
                 <Grid item sm={12} style={{ width: '100%', height: 0, minHeight: '60%', marginBottom: '1rem' }}><Paper style={{ padding: '2rem', textAlign: 'justify', overflow: 'hidden', borderRadius: 4, boxShadow: '0 3px 5px 2px rgba(0,0,0, .3)',  paddingBottom: '2rem', width: '100%', height: '100%' }}>
-                    <div style={{  padding: '0 2rem 2rem 2rem', height: '100%', width: '100%', overflow: 'auto'}}><Typography gutterBottom variant='h4' align='center' style={{ padding : 4 }}>what is sloont?</Typography>
+                    <div style={{  padding: '0 2rem 2rem 2rem', height: '100%', width: '100%', overflow: 'auto'}}><Typography gutterBottom variant='h4' align='center' style={{ padding : 4 }}>what is <span style={{ color: '#75cff8' }}>sloont</span>?</Typography>
                     <Typography>well, it's me. to be honest, i don't really know about the name. it's old and has stuck around for a long time.</Typography>
-                    <Typography>i'm colin.</Typography>
+                    <Typography>i'm <span style={{ color: '#ff905b' }}>colin.</span></Typography>
                     <br />
                     <Typography>i've been many things in life, from college dropout to barista, from unemployed to college graduate. i love learning new things, and if i could go to school forever, i probably would.</Typography>
                     <Typography>i like soccer and hockey, number theory and precious metal refining, video games and cats. basically a whole handful of different things.</Typography>
