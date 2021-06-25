@@ -6,10 +6,10 @@ export const projectDetails = {
         title: 'skill orbs',
         description: {
             text: 'JavaScript',
-            link: 'home',
+            link: '/',
         },
         img: {
-            src: 'https://i.imgur.com/jQzc8dj.png',
+            src: 'https://i.imgur.com/S3WoDvZ.png',
             alt: 'the skill orbs project',
         },
         codesnip: 'https://i.imgur.com/smGxlt9.png'
@@ -35,7 +35,7 @@ export const projectDetails = {
             link: 'https://sloont.github.io/snakelist/',
         },
         img: {
-            src: 'https://i.imgur.com/xOXPA7l.png',
+            src: 'https://i.imgur.com/EHloC4w.png',
             alt: 'the snake lists project',
         },
         codesnip: 'https://i.imgur.com/TXu1DOQ.png'
@@ -48,7 +48,7 @@ export const projectDetails = {
             link: 'https://sloont.github.io/ScheduleGenerator/',
         },
         img: {
-            src: 'https://i.imgur.com/krcX45q.png',
+            src: 'https://i.imgur.com/SBpeI1T.png',
             alt: 'the schedule generator project',
         },
         codesnip: 'https://i.imgur.com/Te15w9o.png'

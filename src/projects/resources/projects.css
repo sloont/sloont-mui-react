@@ -126,10 +126,13 @@
     
 }
 
-.selected-project div img {
+.snippet img {
     display: inline-flex;
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 4px;
+    box-shadow: rgb(0 0 0 / 30%) 0px 3px 5px 2px;
+    
 }
 
 .selected-project a {
@@ -148,9 +151,12 @@
 }
 
 .snippet {
-    box-shadow: rgb(0 0 0 / 30%) 0px 3px 5px 2px;
+    
     
     max-width: 320px;
     max-height: 320px;
-    border-radius: 4px;
+    margin: 2rem 0 2rem 0;
+    
+    padding: 2rem;
+    
 }
