@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
 import './resources/projects.css';
-import ProjectsObject from './resources/projectDetailsObject';
+import { projectDetails } from './resources/projectDetailsObject';
 import ProjectCard from './ProjectCard';
 
 const Projects = () => {
-    const projectsArray = Object.keys(ProjectsObject);
+    const projectsArray = Object.keys(projectDetails);
 
     const initialState = new Array(projectsArray.length).fill(false);
    
@@ -43,7 +43,7 @@ const Projects = () => {
                     <ProjectCard 
                         toggled={toggleArray[index]} 
                         key={index} 
-                        project={ProjectsObject[project]}
+                        project={projectDetails[project]}
                         handleClick={handleClick}
                         index={index}
                     />)

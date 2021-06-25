@@ -166,8 +166,8 @@ const About = () => {
             <Grid item ref={gridItemRef} xs={12} sm={4} className={classes.grid}>
                 <canvas ref={ref} className={classes.canvas} id="canvas"></canvas>
             </Grid>
-            <Grid item xs={12} sm={6} style={{ height: 0, minHeight: 'calc(100% + 1.5rem' }}>
-                <Paper style={{ textAlign: 'justify', overflow: 'auto', padding: '2rem', borderRadius: 4, boxShadow: '0 3px 5px 2px rgba(0,0,0, .3)', width: '100%', height: '100%' }}>
+            <Grid item container xs={12} sm={6} style={{ height: 0, minHeight: 'calc(100% + 1.5rem' }}>
+                <Grid item sm={12}><Paper style={{ textAlign: 'justify', overflow: 'auto', padding: '2rem', borderRadius: 4, boxShadow: '0 3px 5px 2px rgba(0,0,0, .3)', width: '100%', height: '100%' }}>
                     <Typography gutterBottom variant='h4' align='center' style={{ padding : 4 }}>what is sloont?</Typography>
                     <Typography>well, it's me. to be honest, i don't really know about the name. it's old and has stuck around for a long time.</Typography>
                     <Typography>i'm colin.</Typography>
@@ -180,7 +180,8 @@ const About = () => {
                     <br />
                     <Typography>now, web development is the name of the game. for a few years i've been grinding my axe, and in the last six months i hit that magic moment where you don't feel like an impostor any more.</Typography>
                     <Typography>...and i started creating. now i don't know how to stop.</Typography>
-                </Paper>
+                </Paper></Grid>
+                <Grid item sm={12}><Paper style={{ textAlign: 'justify', overflow: 'auto', padding: '2rem', borderRadius: 4, boxShadow: '0 3px 5px 2px rgba(0,0,0, .3)', width: '100%', height: '100%' }}></Paper></Grid>
             </Grid>
         </Grid>
         

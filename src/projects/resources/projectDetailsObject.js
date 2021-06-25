@@ -1,6 +1,19 @@
 
 
-const projectDetails = {
+export const projectDetails = {
+    orbs: {
+        id: 'orbs',
+        title: 'skill orbs',
+        description: {
+            text: 'JavaScript',
+            link: 'home',
+        },
+        img: {
+            src: 'https://i.imgur.com/YZx7nxH.png',
+            alt: 'the reddit snips project',
+        },
+        codesnip: 'https://i.imgur.com/smGxlt9.png'
+    },
     snips: {
         id: 'snips',
         title: 'reddit snips',
@@ -56,6 +69,3 @@ const projectDetails = {
     
 }
 
-export default projectDetails;
-
-//orbs https://i.imgur.com/smGxlt9.png
