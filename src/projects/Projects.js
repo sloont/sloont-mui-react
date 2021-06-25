@@ -35,7 +35,7 @@ const Projects = () => {
         
         console.log(index)
     }
-    console.log(toggleArray);
+    
     return (
         
             <section className="projects">
