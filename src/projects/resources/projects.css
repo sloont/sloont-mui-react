@@ -58,14 +58,14 @@
     padding: 0 !important;
 }
 
-.single-project h2 {
-    font-size: 2em;
+.selected-project h2 {
+    font-size: 20px;
     color:#75cff8;
-    margin-bottom: 2em;
+    margin-bottom: 2rem;
 }
 
-.single-project p {
-    font-size: .75em;
+.selected-project div p {
+    font-size: 14px;
 }
 
 .single-project div {
@@ -113,7 +113,10 @@
     height: 0;
     min-height: 100%;
     overflow: auto;
-    padding-right: 2em;
+    padding: 2rem;
+    border-radius: 4px;
+    box-shadow: rgb(0 0 0 / 30%) 0px 3px 5px 2px;
+    background-color:rgba(255, 255, 255, .04)
     
 
     
