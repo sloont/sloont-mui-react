@@ -41,7 +41,7 @@
 }
 
 .single-project .project-title {
-    font-size: 2em;
+    font-size: 2rem;
 }
 
 .clone {
@@ -92,12 +92,7 @@
     min-height: 50%;
     align-items: center;
     overflow: hidden;
-    padding: 2em;
-    
-    
-    
-    
-    
+    padding: 2rem;
     
 }
 
@@ -113,13 +108,10 @@
     height: 0;
     min-height: 100%;
     overflow: auto;
-    padding: 2rem;
+    padding: 0 2rem 2rem 2rem;
     border-radius: 4px;
     box-shadow: rgb(0 0 0 / 30%) 0px 3px 5px 2px;
     background-color:rgba(255, 255, 255, .04)
-    
-
-    
     
 }
 
@@ -146,10 +138,10 @@
 }
 
 .selected-project a h2 {
-    font-size: 1.5em;
+    font-size: 1.5rem;
 }
 
-.selected-project a h2:hover {
+.selected-project a:hover {
     color: #edf0f1;
 }
 
@@ -158,8 +150,12 @@
     
     max-width: 320px;
     max-height: 320px;
-    margin: 2rem 0 2rem 0;
+    /* margin: 2rem 0 2rem 0; */
     
     padding: 2rem;
     
+}
+
+.link {
+    margin: 0 !important;
 }

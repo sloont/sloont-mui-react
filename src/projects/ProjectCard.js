@@ -10,9 +10,11 @@ const ProjectCard = ({ project, toggled, handleClick, index }) => {
     ) : (
         <article className="selected-project"  onClick={(e) => handleClick(e, index)}>
             <div className="description">
-                <h2>{project.title}</h2>
-                <p>{project.description.text}</p>
-                <br></br><h2><a href={project.description.link}>check it out.</a></h2>
+                <div>
+                    <h2>{project.title}</h2>
+                    <p>{project.description.text}</p>
+                    <br></br><h2 className="link"><a href={project.description.link}>check it out.</a></h2>
+                </div>
             </div>
 
             <div className="snippet">
