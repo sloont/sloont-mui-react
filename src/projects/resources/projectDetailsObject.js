@@ -9,8 +9,8 @@ export const projectDetails = {
             link: 'home',
         },
         img: {
-            src: 'https://i.imgur.com/YZx7nxH.png',
-            alt: 'the reddit snips project',
+            src: 'https://i.imgur.com/jQzc8dj.png',
+            alt: 'the skill orbs project',
         },
         codesnip: 'https://i.imgur.com/smGxlt9.png'
     },

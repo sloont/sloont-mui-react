@@ -91,6 +91,10 @@
     height: 0;
     min-height: 50%;
     align-items: center;
+    overflow: hidden;
+    padding: 2em;
+    
+    
     
     
     
@@ -101,12 +105,16 @@
 
 .selected-project .description, .selected-project .snippet {
     display: inline-block;
-    margin: 2em;
+    
 }
 
 .selected-project .description {
     flex: 0 1 60%;
+    height: 0;
+    min-height: 100%;
     overflow: auto;
+    padding-right: 2em;
+    
 
     
     
@@ -114,6 +122,7 @@
 
 .selected-project .snippet {
     flex: 0 2 40%;
+
     
 }
 
