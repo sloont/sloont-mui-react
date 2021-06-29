@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, useMediaQuery } from '@material-ui/core';
 import { checkCollision, resolveCollision, adjustPositions } from './physics';
 import { checkMouseClick, applyForceWithClick } from './mousePhysics';
 import { generateOrbInformation, orbInformation } from './orbInformation';
@@ -13,6 +13,18 @@ const useStyles = makeStyles({
         width: '100% !important',
         height: '100% !important',
     },
+    gridMobile: {
+        // width: '100% !important',
+        // height: '100% !important',
+        
+        gap: '1rem'
+    },
+    canvasWrapper: {
+        width: '100% !important',
+        height: 'calc(100vh - 6rem)',
+        marginBottom: '1rem',
+        
+    },
     canvas: {
         borderRadius: 4,
         boxShadow: '0 3px 5px 2px rgba(0,0,0, .3)',
@@ -20,7 +32,7 @@ const useStyles = makeStyles({
         width: '100%',
         height: '100%',
         cursor: 'pointer',
-        maxHeight: 'calc(100vh - 8rem)'
+        maxHeight: 'calc(100vh - 4rem)'
         
     }
 });
@@ -108,12 +120,15 @@ class Orb {
 ///////////////////////////////////////////////////////
 
 const Home = () => {
-    
+
+    const matches = useMediaQuery('(max-width:480px)');
+
     const classes = useStyles();
     let ref = useRef();
     let gridItemRef = useRef();
 
-
+    const gridType = !matches ? classes.grid : classes.gridMobile;
+    const innerGrid = matches ? classes.canvasWrapper : '';
 
     let orbCollection = [];
     const [resized, setResized] = useState(false);
@@ -223,11 +238,11 @@ const Home = () => {
                 // spacing={3}
                 direction="row"
                 justify="center"
-                className={classes.grid}
+                className={gridType}
                 // style={{ overflow: 'hidden' }}
             >
-                <Grid ref={gridItemRef} item xs={12} sm={7} md={8} lg={9} xl={9}><canvas ref={ref} className={classes.canvas} id="canvas"></canvas></Grid>
-                <Grid item xs={12} sm={4} md={3} lg={3} xl={2}><PlainText /></Grid>
+                <Grid className={innerGrid} ref={gridItemRef} item xs={12} sm={7} md={8} lg={9} xl={9}><canvas ref={ref} className={classes.canvas} id="canvas"></canvas></Grid>
+                <Grid className={innerGrid} item xs={12} sm={4} md={3} lg={3} xl={2}><PlainText /></Grid>
                 
             </Grid>
             <SVGS />
@@ -236,3 +251,4 @@ const Home = () => {
 }
 
 export default Home;
+//

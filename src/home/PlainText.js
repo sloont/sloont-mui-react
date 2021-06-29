@@ -1,5 +1,5 @@
 import React from 'react';
-import { Paper } from '@material-ui/core';
+import { Paper, useMediaQuery } from '@material-ui/core';
 import { parsingFunction } from '../helpers/parser';
 import parse from 'html-react-parser';
 import { makeStyles } from '@material-ui/core';
@@ -14,11 +14,32 @@ const useStyles = makeStyles({
         padding: '4px',
         marginLeft: '1rem',
         overflow: 'auto',
+        '& div': {
+            '& pre': {
+                '& code': {
+                    fontSize: 12,
+                    marginLeft: '-1rem'
+                }
+            }
+        }
+        
+    },
+    plainTextMobile: {
+        borderRadius: 4,
+        boxShadow: '0 3px 5px 2px rgba(0,0,0, .3)',
+        background: '#232a2e',
+        height: 0,
+        minHeight: 'calc(100% - 6px)',
+        padding: '4px',
+        marginLeft: '1rem',
+        overflow: 'auto'
         
     }
 })
 const PlainText = () => {
+    const matches = useMediaQuery('(max-width:480px)')
     const classes = useStyles();
+    const classPlainText = !matches ? classes.plainText : classes.plainTextMobile;
     const skills = `
         skills : {
 
@@ -65,7 +86,7 @@ const PlainText = () => {
     console.log(jsonSkills);
     return (
         
-        <Paper className={classes.plainText}>
+        <Paper className={classPlainText}>
             <div>{jsonSkills}</div>
             
         </Paper>
