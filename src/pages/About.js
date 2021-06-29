@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 //import './pages.css';
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, useMediaQuery } from '@material-ui/core';
 import { Grid, Paper, Typography } from '@material-ui/core';
 import _debounce from 'lodash.debounce';
 import { checkMouseClick, applyForceWithClick } from '../home/mousePhysics';
@@ -13,6 +13,11 @@ const useStyles = makeStyles({
         height: '100% !important',
         marginRight: '1rem'
     },
+    gridMobile: {
+        width: '100% !important',
+        height: '100%',
+        marginBottom: '1rem'
+    },
     canvas: {
         borderRadius: 4,
         boxShadow: '0 3px 5px 2px rgba(0,0,0, .3)',
@@ -20,17 +25,36 @@ const useStyles = makeStyles({
         width: '100%',
         height: '100%',
         cursor: 'pointer',
-        maxHeight: 'calc(100vh - 8rem)'
+        maxHeight: 'calc(100vh - 5rem)'
     },
     outerGrid: {
         justifyContent: 'center',
-         height: '100%'
+        height: '100%'
+    },
+    outerGridMobile: {
+        justifyContent: 'center',
+        height: '100%',
+        marginBottom: '1rem'
     },
     descriptionGridItem: {
         width: '100%', 
         height: 0, 
-        minHeight: '60%', 
+        minHeight: 'calc(60% - 1rem)', 
         marginBottom: '1rem'
+    },
+    descriptionGridItemMobile: {
+        width: '100%', 
+        height: 0, 
+        minHeight: 'calc(100% - 1rem)', 
+        marginBottom: '1rem'
+    },
+    descriptionGrid: {
+        height: 0, 
+        minHeight: '100%'
+    },
+    descriptionGridMobile: {
+        height: 'calc(100vh - 5rem)',
+        
     },
     description: {
         padding: '2rem', 
@@ -41,6 +65,17 @@ const useStyles = makeStyles({
         paddingBottom: '2rem', 
         width: '100%', 
         height: '100%' 
+    },
+    descriptionMobile: {
+        padding: '0', 
+        textAlign: 'justify', 
+        overflow: 'hidden', 
+        borderRadius: 4, 
+        boxShadow: '0 3px 5px 2px rgba(0,0,0, .3)',  
+        paddingBottom: '1rem', 
+        width: '100%', 
+        height: '100%',
+        fontSize: 10, 
     },
     innerDescription: {
         padding: '0 2rem 2rem 2rem', 
@@ -54,7 +89,13 @@ const useStyles = makeStyles({
     linksGridItem: {
         width: '100%', 
         height: 0, 
-        minHeight: 'calc(40% - 1rem)'
+        minHeight: 'calc(40%)',
+    },
+    linksGridItemMobile: {
+        width: '100%', 
+        height: 0, 
+        minHeight: 'calc(40% - 1rem)',
+        marginBottom: '1rem'
     },
     links: {
         textAlign: 'justify', 
@@ -93,8 +134,11 @@ class Orb {
 
             this.context.fillStyle = this.image
             this.context.beginPath();
+            this.context.strokeStyle = '#1a2125'
+            this.context.lineWidth = 2;
             this.context.arc(this.xpos, this.ypos, this.radius, 0, Math.PI * 2, false);
             this.context.fill();
+            this.context.stroke();
             this.context.closePath();
 
 
@@ -151,9 +195,28 @@ class Orb {
 }
 
 const About = () => {
+    const matches = useMediaQuery('(max-width:480px)');
+    let grid, outerGrid, descriptionGrid, linksGridItem, descriptionGridItem, description;
     const ref = useRef();
     const gridItemRef = useRef();
     const classes = useStyles();
+
+    if (!matches) {
+        grid =  classes.grid;
+        outerGrid =  classes.outerGrid;
+        descriptionGrid =  classes.descriptionGrid;
+        linksGridItem =  classes.linksGridItem;
+        descriptionGridItem  =  classes.descriptionGridItem;
+        description =  classes.description;
+    }
+    else {
+        grid =  classes.gridMobile;
+        outerGrid =  classes.outerGridMobile;
+        descriptionGrid =  classes.descriptionGridMobile;
+        linksGridItem =  classes.linksGridItemMobile;
+        descriptionGridItem  =  classes.descriptionGridItemMobile;
+        description =  classes.descriptionMobile;
+    }
 
     const [resized, setResized] = useState(false);
     const image = new Image();
@@ -260,13 +323,13 @@ const About = () => {
     });
 
     return (
-        <Grid container className={classes.outerGrid}>
-            <Grid item ref={gridItemRef} xs={12} sm={4} className={classes.grid}>
+        <Grid container className={outerGrid}>
+            <Grid item ref={gridItemRef} xs={12} sm={4} className={grid}>
                 <canvas ref={ref} className={classes.canvas} id="canvas"></canvas>
             </Grid>
-            <Grid item container xs={12} sm={6} style={{ height: 0, minHeight: '100%'}}>
+            <Grid item container xs={12} sm={6} className={descriptionGrid}>
                 
-                <Grid item sm={12} className={classes.descriptionGridItem}><Paper className={classes.description}>
+                <Grid item sm={12} className={descriptionGridItem}><Paper className={description}>
                     <div className={classes.innerDescription}><Typography gutterBottom variant='h4' align='center' className={classes.descriptionHeader}>what is <span style={{ color: '#75cff8' }}>sloont</span>?</Typography>
                         <Typography variant='subtitle1'>well, it's me. to be honest, i don't really know about the name. it's old and has stuck around for a long time.</Typography>
                         <Typography variant='subtitle1'>i'm <span style={{ color: '#ff905b' }}>colin.</span></Typography>
@@ -280,7 +343,7 @@ const About = () => {
                         <Typography variant='subtitle1'>now, web development is the name of the game. for a few years i've been grinding my axe, and in the last six months i hit that magic moment where you don't feel like an impostor any more.</Typography>
                         <Typography variant='subtitle1'>...and i started creating. now i don't know how to stop.</Typography>
                 </div></Paper></Grid>
-                <Grid item sm={12} className={classes.linksGridItem}><Paper className={classes.links}></Paper></Grid>
+                <Grid item sm={12} className={linksGridItem}><Paper className={classes.links}></Paper></Grid>
                 
             </Grid>
         </Grid>
