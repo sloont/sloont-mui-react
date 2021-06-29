@@ -25,3 +25,12 @@ main {
 ::-webkit-scrollbar-corner {
     background: #232a2e;
 }
+
+@media (max-width:480px) {
+    main {
+        width: calc(100vw - 2rem);
+        height: calc(100vh - 6rem);
+        margin: 5rem 1rem 1rem 1rem;
+        justify-content: center;
+    }
+}
