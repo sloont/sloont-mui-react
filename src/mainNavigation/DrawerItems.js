@@ -12,6 +12,7 @@ const NavItems = () => {
                 <li><NavLink to="/projects">projects.</NavLink></li>
                 <Divider style={{ width: '95%' }}/>
                 <li><NavLink to="/about">about.</NavLink></li>
+                
             </ul>
         </nav>
     );

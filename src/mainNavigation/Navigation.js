@@ -48,7 +48,6 @@ const Navigation = () => {
                     anchor='left'
                     open={drawerState}
                     onClose={() => toggleDrawer()}
-                    style={{ width: '50%' }}
 
                 ><DrawerItems /></Drawer>
 
@@ -56,7 +55,7 @@ const Navigation = () => {
     )
 
     return (
-        <AppBar position="fixed" style={{background: '#121212'}}>
+        <AppBar position="fixed" style={{background: '#121212', zIndex: 1000000}}>
             <Toolbar style={{background: 'rgb(117, 207, 248, 0.08)'}}> 
                 {display}
             </Toolbar>
