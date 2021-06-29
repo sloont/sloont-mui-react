@@ -31,7 +31,7 @@ const useStyles = makeStyles({
         height: 0,
         minHeight: 'calc(100% - 6px)',
         padding: '4px',
-        marginLeft: '1rem',
+        // marginLeft: '1rem',
         overflow: 'auto'
         
     }
