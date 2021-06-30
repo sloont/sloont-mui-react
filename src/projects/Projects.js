@@ -27,7 +27,7 @@ const Projects = () => {
     const scrollTo = (index) => {
         const rect = projectsRef.current[index].getBoundingClientRect();
        
-        setScrollY(rect.y - 74 * index - 72); //size of collapsed projects + padding & gap - 4.5 rem
+        setScrollY(rect.y - 75 * index - 68); //size of collapsed projects + padding & gap - 4 rem (14) - 12
     }
 
     //
