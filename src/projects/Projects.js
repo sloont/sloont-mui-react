@@ -5,12 +5,12 @@ import { projectDetails } from './resources/projectDetailsObject';
 import ProjectCard from './ProjectCard';
 
 
-const offset = (el) => {
-    const rect = el.getBoundingClientRect(),
-    scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
-}
+// const offset = (el) => {
+//     const rect = el.getBoundingClientRect(),
+//     scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+//     scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+//     return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+// }
 
 
 
