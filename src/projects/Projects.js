@@ -29,7 +29,7 @@ const Projects = () => {
         if (index !== -1) {
             const rect = projectsRef.current[index].getBoundingClientRect();
             const y = rect.y;
-            window.scrollTo(0, y - 67);//appBar height + 8
+            window.scrollTo(0, y - 67 + window.scrollY);//appBar height + 8
         } else {
             window.scrollTo(0,0);
         }
