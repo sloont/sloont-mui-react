@@ -20,23 +20,21 @@ const Projects = () => {
     const initialState = new Array(projectsArray.length).fill(false);
 
     const [toggleArray, setToggleArray] = useState(initialState);
-    const [scrollY, setScrollY] = useState(0);
 
     const projectsRef = useRef([]);
 
-    const scrollTo = (index) => {
-        const rect = projectsRef.current[index].getBoundingClientRect();
-       
-        setScrollY(rect.y - 75 * index - 68); //size of collapsed projects + padding & gap - 4 rem (14) - 12
-    }
-
-    //
     useEffect(() => {
-        // const ratio = window.devicePixelRatio;
         
-        window.scrollTo(0, scrollY);
-        
-    }, [scrollY, toggleArray]);
+        const index = toggleArray.indexOf(true);
+        if (index !== -1) {
+            const rect = projectsRef.current[index].getBoundingClientRect();
+            const y = rect.y;
+            window.scrollTo(0, y - 67);//appBar height + 8
+        } else {
+            window.scrollTo(0,0);
+        }
+    
+    }, [toggleArray]);
 
     const handleClick = (e, index) => {
         
@@ -64,7 +62,7 @@ const Projects = () => {
             
             return newToggles;
         });
-        scrollTo(index);
+        
     }
     
     return (
