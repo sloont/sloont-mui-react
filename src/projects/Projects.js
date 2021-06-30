@@ -19,7 +19,9 @@ const Projects = () => {
         if (index !== -1) {
             const rect = projectsRef.current[index].getBoundingClientRect();
             const y = rect.y;
-            window.scrollTo(0, y - 67 + window.scrollY);//appBar height + 8
+            
+            window.scrollTo({ left: 0, top: y - 67 + window.scrollY, behavior: 'smooth' });//appBar height + 8
+            projectsRef.current[index].scrollTo(0,0);
         } else {
             window.scrollTo(0,0);
         }
