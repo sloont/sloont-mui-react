@@ -194,12 +194,6 @@
         box-shadow: rgb(0 0 0 / 30%) 0px 3px 5px 2px;
     }
 
-    .single-project:hover {
-
-        background-color: rgba(117, 207, 248, .3);
-        
-    }
-
     .single-project .project-title {
         font-size: 1.5rem;
     }
@@ -240,14 +234,14 @@
         border-radius: 4px;
         box-sizing: border-box;
         background-color: #232a2e !important;
-        /* border: 2px solid #edf0f1; */
+        
         flex: 0 3 100vh;
         display: flex;
         gap: 1em;
         flex-wrap: nowrap;
         justify-content: center;
         flex-direction: column;
-        /* padding-top: 2em; */
+        
         box-shadow: rgb(0 0 0 / 30%) 0px 3px 5px 2px;
         height: 0;
         min-height: 100%;

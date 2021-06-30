@@ -1,14 +1,14 @@
 import React from 'react';
 
-const ProjectCard = ({ project, toggled, handleClick, index }) => {
+const ProjectCard = React.forwardRef(({ project, toggled, handleClick, index }, ref) => {
 
     let displayedContent = !toggled ? (
-        <article className="single-project" onClick={(e) => handleClick(e, index)}>
+        <article ref={ref} className="single-project" onClick={(e) => handleClick(e, index)}>
             <div className="snakeLists project-title">{project.title}</div>
             <div className="clone" style={{ backgroundImage: `url(${project.codesnip})` }}></div>
         </article>
     ) : (
-        <article className="selected-project"  onClick={(e) => handleClick(e, index)}>
+        <article ref={ref} className="selected-project"  onClick={(e) => handleClick(e, index)}>
             <div className="description">
                 <div>
                     <h2>{project.title}</h2>
@@ -28,6 +28,6 @@ const ProjectCard = ({ project, toggled, handleClick, index }) => {
             {displayedContent}
         </>
     );
-}
+});
 
 export default ProjectCard;
