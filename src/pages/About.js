@@ -253,8 +253,10 @@ const About = () => {
         
         const resizer = _debounce((event) => {
             event.stopPropagation();
-            setResized(true);
-            return resized;
+            if (!matches) {
+                setResized(true);
+                return resized;
+            }
         }, 500);
         window.addEventListener('resize', resizer);
 
