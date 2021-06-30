@@ -217,7 +217,7 @@
     .selected-project h2 {
         font-size: 20px;
         color:#75cff8;
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
     }
 
     .selected-project div p {
@@ -240,16 +240,16 @@
         flex: 0 3 100vh;
         display: flex;
         gap: 1em;
-        flex-wrap: nowrap;
+        flex-wrap:wrap;
         justify-content: center;
-        flex-direction: column;
+        
         
         box-shadow: rgb(0 0 0 / 30%) 0px 3px 5px 2px;
         height: 0;
         min-height: calc(100vh - 74px);
         align-items: center;
-        overflow: hidden;
-        padding: 2rem;
+        overflow: auto;
+        padding: 1rem;
         
         
         
@@ -263,19 +263,14 @@
     }
 
     .selected-project .description {
-        flex: 0 1 60%;
-        height: 0;
-        min-height: 70%;
-        overflow: auto;
-        padding: 0 2rem 2rem 2rem;
-        border-radius: 4px;
-        box-shadow: rgb(0 0 0 / 30%) 0px 3px 5px 2px;
-        background-color:rgba(255, 255, 255, .04)
+        flex: 0 1 100%;
         
+        text-align: justify;
+        /* padding: 0 2rem 2rem 2rem; */
     }
 
     .selected-project .snippet {
-        flex: 0 2 40%;
+        flex: 0 2 100%;
 
         
     }
@@ -309,14 +304,11 @@
         
         max-width: 320px;
         max-height: 320px;
-        /* margin: 2rem 0 2rem 0; */
-        
-        padding: 2rem;
         
     }
 
     .link {
-        margin: 0 !important;
+        margin-bottom: 1rem !important; /*doesn't work*/
     }
 
 
