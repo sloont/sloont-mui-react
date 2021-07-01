@@ -13,7 +13,7 @@ import {
 } from 'react-router-dom';
 import Home from './home/Home';
 import Projects from './projects/Projects';
-import About from './pages/About';
+import About from './about/About';
 import Snips from './snips/Snips';
 import store from './store/store';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';

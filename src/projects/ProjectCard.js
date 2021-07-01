@@ -1,5 +1,6 @@
 import React from 'react';
 import { useMediaQuery } from '@material-ui/core';
+import DirectionsIcon from '@material-ui/icons/Directions';
 
 const ProjectCard = React.forwardRef(({ project, toggled, handleClick, index }, ref) => {
 
@@ -14,9 +15,8 @@ const ProjectCard = React.forwardRef(({ project, toggled, handleClick, index }, 
         <article ref={ref} className="selected-project"  onClick={(e) => handleClick(e, index)}>
             <div className="description">
                 <div>
-                    <h2>{project.title}</h2>
+                    <div className="selected-project-header"><h2>{project.title}</h2><a href={project.description.link}><DirectionsIcon /></a></div>
                     <p>{project.description.text}</p>
-                    <br></br><h2 className="link"><a href={project.description.link}>check it out.</a></h2>
                 </div>
             </div>
 
@@ -30,12 +30,9 @@ const ProjectCard = React.forwardRef(({ project, toggled, handleClick, index }, 
                 <img src={project.img.src} alt={project.img.alt} />
             </div>
 
-            <div className="description">
-                
-                    <h2>{project.title}</h2>
+            <div className="description">             
+                    <div className="selected-project-header"><h2>{project.title}</h2><a href={project.description.link}><DirectionsIcon /></a></div>
                     <p>{project.description.text}</p>
-                    <br></br><h2 className="link"><a href={project.description.link}>check it out.</a></h2>
-                
             </div>
 
             

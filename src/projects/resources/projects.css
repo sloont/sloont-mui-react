@@ -1,4 +1,5 @@
 @media (min-width:481px){
+
     .projects {
         height: 100%;
         width: 100%;
@@ -60,7 +61,7 @@
     .selected-project h2 {
         font-size: 20px;
         color:#75cff8;
-        margin-bottom: 2rem;
+        /* margin-bottom: 2rem; */
     }
 
     .selected-project div p {
@@ -85,16 +86,20 @@
         gap: 1em;
         flex-wrap: nowrap;
         justify-content: center;
-        /* padding-top: 2em; */
         box-shadow: rgb(0 0 0 / 30%) 0px 3px 5px 2px;
         height: 0;
         min-height: 50%;
         align-items: center;
         overflow: hidden;
-        padding: 2rem;
+        padding: 1rem;
         
     }
-
+    
+    .selected-project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
 
     .selected-project .description, .selected-project .snippet {
@@ -107,11 +112,17 @@
         height: 0;
         min-height: 100%;
         overflow: auto;
-        padding: 0 2rem 2rem 2rem;
+        padding: 0 1rem 1rem 1rem;
         border-radius: 4px;
         box-shadow: rgb(0 0 0 / 30%) 0px 3px 5px 2px;
-        background-color:rgba(255, 255, 255, .04)
+        background-color:rgba(255, 255, 255, .04);
         
+    }
+
+    .selected-project .description div p{
+        font-size: 12px;
+        text-align:justify;
+        padding: 0 0 1rem 0;
     }
 
     .selected-project .snippet {
@@ -130,10 +141,12 @@
     }
 
     .selected-project a {
-        text-decoration: none;
-        
-        color: #75cff8;
+        text-decoration: none;       
+        color: #ff905b;
+    }
 
+    .selected-project a svg {
+        font-size: 28px;
     }
 
     .selected-project a h2 {
@@ -141,7 +154,7 @@
     }
 
     .selected-project a:hover {
-        color: #edf0f1;
+        color: #75cff8;
     }
 
     .snippet {
@@ -149,9 +162,10 @@
         
         max-width: 320px;
         max-height: 320px;
-        /* margin: 2rem 0 2rem 0; */
         
-        padding: 2rem;
+        
+        padding: 1rem;
+        
         
     }
 
@@ -217,7 +231,15 @@
     .selected-project h2 {
         font-size: 20px;
         color:#75cff8;
-        margin-bottom: 1rem;
+        margin-block-start: 0.5em;
+        
+    }
+
+    .selected-project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* flex-direction: column; */
     }
 
     .selected-project div p {
@@ -285,14 +307,17 @@
     }
 
     .selected-project a {
-        text-decoration: none;
+        text-decoration: none;       
+        color: #ff905b;
         
-        color: #75cff8;
+    }
 
+    .selected-project a svg {
+        font-size: 28px;
     }
 
     .selected-project a h2 {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 
     .selected-project a:hover {
@@ -307,9 +332,6 @@
         
     }
 
-    .link {
-        margin-bottom: 1rem !important; /*doesn't work*/
-    }
 
 
 
