@@ -50,7 +50,7 @@ const useStyles = makeStyles({
     descriptionGridItemMobile: {
         width: '100%', 
         height: 0, 
-        minHeight: 'calc(100% - 1rem)', 
+        minHeight: 'calc(90% - 1rem)', 
         marginBottom: '1rem'
     },
     descriptionGrid: {
@@ -81,7 +81,7 @@ const useStyles = makeStyles({
         paddingBottom: '1rem', 
         width: '100%', 
         height: '100%',
-        fontSize: 10, 
+         
     },
     innerDescription: {
         padding: '0 1rem 1rem 1rem', 
@@ -103,7 +103,7 @@ const useStyles = makeStyles({
     linksGridItemMobile: {
         width: '100%', 
         height: 0, 
-        minHeight: 'calc(40% - 1rem)',
+        minHeight: 'calc(10% - 1rem)',
         marginBottom: '1rem'
     },
     links: {
@@ -144,7 +144,7 @@ class Orb {
         this.dx = 1.5 * this.speed;
         this.dy = 1 * this.speed;
         this.gravity = [0, -0.01];
-        console.log(typeof this.image);
+        
     }
     draw() {
         if (typeof this.image === 'string') {
@@ -163,12 +163,12 @@ class Orb {
 
             this.context.save();
             this.context.beginPath();
-            /*test*/this.context.strokeStyle = "white";
-            /*test*/this.context.lineWidth = 5;
+            this.context.strokeStyle = "white";
+            this.context.lineWidth = 5;
             this.context.arc(this.xpos, this.ypos, this.radius, 0, Math.PI * 2, false);
             this.context.clip();
             this.context.drawImage(this.image, (this.xpos - this.radius), (this.ypos - this.radius), this.radius *2, this.radius*2);
-            /*test*/this.context.stroke();
+            this.context.stroke();
             this.context.restore();
 
         }
@@ -217,7 +217,7 @@ const About = () => {
     const ref = useRef();
     const gridItemRef = useRef();
     const classes = useStyles();
-
+    
     if (!matches) {
         grid =  classes.grid;
         outerGrid =  classes.outerGrid;
@@ -273,15 +273,15 @@ const About = () => {
             if (!matches) {
                 setResized(true);
                 return resized;
+            } 
+            if (matches) {
+                console.log('Dynamic grid resizing is turned off for mobile. If you\'re in the inspector, refresh the page for canvas resize :D');
             }
         }, 500);
         window.addEventListener('resize', resizer);
 
         let canvas = ref.current;
         let gridItem = gridItemRef.current;
-
-        console.log(gridItem.clientWidth);
-        console.log(gridItem.clientHeight);
 
         let height = gridItem.clientHeight;
 
@@ -299,7 +299,6 @@ const About = () => {
             const rect = canvas.getBoundingClientRect();
             mouse.x = event.clientX - rect.left;
             mouse.y = event.clientY - rect.top;
-            console.log(mouse.x, mouse.y);
             ballPit.forEach(ballA => {
                 checkMouseClick(ballA, mouse);
                 if (checkMouseClick(ballA, mouse)) {

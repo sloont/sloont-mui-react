@@ -83,7 +83,7 @@ const PlainText = () => {
     
     let jsonSkills = parsingFunction(skills);
     jsonSkills = parse(jsonSkills);
-    console.log(jsonSkills);
+    
     return (
         
         <Paper className={classPlainText}>

@@ -172,9 +172,6 @@ const Home = () => {
         let canvas = ref.current;
         let gridItem = gridItemRef.current;
 
-        console.log(gridItem.clientWidth);
-        console.log(gridItem.clientHeight);
-
         let height = gridItem.clientHeight;
 
         canvas.width = height * gridItem.clientWidth / gridItem.clientHeight;
@@ -194,7 +191,7 @@ const Home = () => {
             const rect = canvas.getBoundingClientRect();
             mouse.x = event.clientX - rect.left;
             mouse.y = event.clientY - rect.top;
-            console.log(mouse.x, mouse.y);
+            
             orbCollection.forEach(ballA => {
                 checkMouseClick(ballA, mouse);
                 if (checkMouseClick(ballA, mouse)) {

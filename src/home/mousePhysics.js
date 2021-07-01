@@ -19,8 +19,8 @@ export const applyForceWithClick = (ballA, mouse, gridItem) => {
 
     ballA.dx -= (1/ballA.radius) * impulse[0];
     ballA.dy -= (1/ballA.radius) * impulse[1];
-    console.log("Magnitude: " + magnitude + " < " + ballA.radius + " (radius)")
-    console.log("New Velocity: " + [ballA.dx, ballA.dy])
+    // console.log("Magnitude: " + magnitude + " < " + ballA.radius + " (radius)")
+    // console.log("New Velocity: " + [ballA.dx, ballA.dy])
 }
 
 export const applyForceWithClickAbout = (ballA, mouse, gridItem) => {
@@ -38,6 +38,6 @@ export const applyForceWithClickAbout = (ballA, mouse, gridItem) => {
 
     ballA.dx -= (1/ballA.radius) * impulse[0];
     ballA.dy -= (1/ballA.radius) * impulse[1];
-    console.log("Magnitude: " + magnitude + " < " + ballA.radius + " (radius)")
-    console.log("New Velocity: " + [ballA.dx, ballA.dy])
+    // console.log("Magnitude: " + magnitude + " < " + ballA.radius + " (radius)")
+    // console.log("New Velocity: " + [ballA.dx, ballA.dy])
 }
