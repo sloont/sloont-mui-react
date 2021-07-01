@@ -44,7 +44,13 @@ export const projectDetails = {
         id: 'snake',
         title: 'snake lists',
         description: {
-            text: 'With this project I wanted to test my JavaScript ability. At the time, I had no idea how someone would implement the game of snake in a browser, so it stayed that way. Snakelists was my version of snake where it was designed without research on how it could be done better. I wanted to stay in the dark and see if I could get a working game that was fun and efficient. I chose a doubly-linked list data structure to represent the snake, creating a grid system with simple html divs for pixels. The game runs on the setTimeout method, taking directional inputs from the user and refreshing the "pixel" grid over a decreasing interval. A toggle for the gridlines, a reset, and a play button are used, as well as a functional scoreboard with its own special formula. You even get a score multiplier for playing without the grid. Its not perfect, especially without real input buffering, but after you get the hang of it, snakelists feels intuitive and maybe even fun.',
+            text: `With this project I wanted to test my JavaScript ability. At the time, I had no idea how someone would implement the game of snake in a browser, 
+                    so it stayed that way. Snakelists was my version of snake where it was designed without research on how it could be done better. I wanted to stay in 
+                    the dark and see if I could get a working game that was fun and efficient. I chose a doubly-linked list data structure to represent the snake, creating 
+                    a grid system with simple html divs for pixels. The game runs on the setTimeout method, taking directional inputs from the user and refreshing the "pixel" 
+                    grid over a decreasing interval. A toggle for the gridlines, a reset, and a play button are used, as well as a functional scoreboard with its own special formula. 
+                    You even get a score multiplier for playing without the grid. Its not perfect, especially without real input buffering, but after you get the hang of it, snakelists 
+                    feels intuitive and maybe even fun.`,
             link: 'https://sloont.github.io/snakelist/',
         },
         img: {
@@ -57,7 +63,11 @@ export const projectDetails = {
         id: 'schedule',
         title: 'schedule generator',
         description: {
-            text: 'The idea with this project was to create a program that could generate all possible unique schedules given a number of teams and weeks. Some customization for the teams was added to make it look friendlier. Schedule generator ended up being --and still is-- an ambitious work in progress. Teams can play a home and away fixture against every other team. Each added set of two teams increases the number of permuations exponentially, and this ended up limiting the number of teams the generator can handle. Currently schedule generator has a maximum of 8 teams due to the stress of the calculations required. If an odd number of teams is selected, byes are filled into the schedule. The produced schedules are valid and unique, defaulting to enough gameweeks that each team can play every other team both at home and away.',
+            text: `The idea with this project was to create a program that could generate all possible unique schedules given a number of teams and weeks. Some customization 
+                    for the teams was added to make it look friendlier. Schedule generator ended up being --and still is-- an ambitious work in progress. Teams can play a home 
+                    and away fixture against every other team. Each added set of two teams increases the number of permuations exponentially, and this ended up limiting the number 
+                    of teams the generator can handle. Currently schedule generator has a maximum of 8 teams due to the stress of the calculations required. If an odd number of teams 
+                    is selected, byes are filled into the schedule. The produced schedules are valid and unique, defaulting to enough gameweeks that each team can play every other team both at home and away.`,
             link: 'https://sloont.github.io/ScheduleGenerator/',
         },
         img: {
@@ -70,7 +80,9 @@ export const projectDetails = {
         id: 'divwatch',
         title: 'divWatch',
         description: {
-            text: 'When first learning asynchronous JavaScript, you are taught the set timeout function in the form of a stopwatch. I thought it could be interesting to take this example and instead of using text to display the clock, using html div elements like a digital clock. The JavaScript behind divwatch uses seven div elements for each digit of the clock and turns them off or on based on the number it is told to display. divwatch has start, stop, and reset functionality, just like your standard stopwatch.',
+            text: `When first learning asynchronous JavaScript, you are taught the set timeout function in the form of a stopwatch. I thought it could be interesting to take 
+                    this example and instead of using text to display the clock, using html div elements like a digital clock. The JavaScript behind divwatch uses seven div 
+                    elements for each digit of the clock and turns them off or on based on the number it is told to display. divwatch has start, stop, and reset functionality, just like your standard stopwatch.`,
             link: 'https://sloont.github.io/DivWatch/',
         },
         img: {

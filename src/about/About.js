@@ -6,6 +6,11 @@ import _debounce from 'lodash.debounce';
 import { checkMouseClick, applyForceWithClick } from '../home/mousePhysics';
 import { checkCollision, resolveCollision, adjustPositions } from '../home/physics';
 
+import GitHubIcon from '@material-ui/icons/GitHub';
+import MailOutlineIcon from '@material-ui/icons/MailOutline';
+
+
+
 
 const useStyles = makeStyles({
     grid: {
@@ -39,7 +44,7 @@ const useStyles = makeStyles({
     descriptionGridItem: {
         width: '100%', 
         height: 0, 
-        minHeight: 'calc(60% - 1rem)', 
+        minHeight: 'calc(90% - 1rem)', 
         marginBottom: '1rem'
     },
     descriptionGridItemMobile: {
@@ -57,14 +62,15 @@ const useStyles = makeStyles({
         
     },
     description: {
-        padding: '2rem', 
+        padding: '1rem', 
         textAlign: 'justify', 
         overflow: 'hidden', 
         borderRadius: 4, 
         boxShadow: '0 3px 5px 2px rgba(0,0,0, .3)',  
-        paddingBottom: '2rem', 
+        paddingBottom: '1rem', 
         width: '100%', 
-        height: '100%' 
+        height: '100%',
+        
     },
     descriptionMobile: {
         padding: '0', 
@@ -78,10 +84,13 @@ const useStyles = makeStyles({
         fontSize: 10, 
     },
     innerDescription: {
-        padding: '0 2rem 2rem 2rem', 
+        padding: '0 1rem 1rem 1rem', 
         height: '100%', 
         width: '100%', 
-        overflow: 'auto'
+        overflow: 'auto',
+        '& p': {
+            fontSize: 12
+        } 
     },
     descriptionHeader: {
         padding : 4
@@ -89,7 +98,7 @@ const useStyles = makeStyles({
     linksGridItem: {
         width: '100%', 
         height: 0, 
-        minHeight: 'calc(40%)',
+        minHeight: '10%',
     },
     linksGridItemMobile: {
         width: '100%', 
@@ -98,13 +107,21 @@ const useStyles = makeStyles({
         marginBottom: '1rem'
     },
     links: {
-        textAlign: 'justify', 
-        overflow: 'auto', 
+        display: 'flex',
+        justifyContent: 'space-around',
+        alignItems: 'center',
         padding: '2rem', 
         borderRadius: 4, 
         boxShadow: '0 3px 5px 2px rgba(0,0,0, .3)', 
         width: '100%', 
-        height: '100%'
+        height: '100%',
+        '& a': {
+            textDecoration: 'none',
+            color: '#75cff8',
+        },
+        '& a:hover': {
+            color: '#ff905b'
+        }
     }
 
 });
@@ -333,19 +350,21 @@ const About = () => {
                 
                 <Grid item sm={12} className={descriptionGridItem}><Paper className={description}>
                     <div className={classes.innerDescription}><Typography gutterBottom variant='h4' align='center' className={classes.descriptionHeader}>what is <span style={{ color: '#75cff8' }}>sloont</span>?</Typography>
-                        <Typography variant='subtitle1'>well, it's me. to be honest, i don't really know about the name. it's old and has stuck around for a long time.</Typography>
-                        <Typography variant='subtitle1'>i'm <span style={{ color: '#ff905b' }}>colin.</span></Typography>
+                        <Typography variant='body1'>well, it's me. to be honest, i don't really know about the name. it's old and has stuck around for a long time.</Typography>
+                        <Typography variant='body1'>i'm <span style={{ color: '#ff905b' }}>colin.</span></Typography>
                         <br />
-                        <Typography variant='subtitle1'>i've been many things in life, from college dropout to barista, from unemployed to college graduate. i love learning new things, and if i could go to school forever, i probably would.</Typography>
-                        <Typography variant='subtitle1'>i like soccer and hockey, number theory and precious metal refining, video games and cats. basically a whole handful of different things.</Typography>
+                        <Typography variant='body1'>i've been many things in life, from college dropout to barista, from unemployed to college graduate. i love learning new things, and if i could go to school forever, i probably would.</Typography>
+                        <Typography variant='body1'>i like soccer and hockey, number theory and precious metal refining, video games and cats. basically a whole handful of different things.</Typography>
                         <br />
-                        <Typography variant='subtitle1'>my education is in bio- and physical chemistry, but at some point i decided to go against it. i wanted to do other things.</Typography>
-                        <Typography variant='subtitle1'>so here i am.</Typography>
+                        <Typography variant='body1'>my education is in bio- and physical chemistry, but at some point i decided to go against it. i wanted to do other things.</Typography>
+                        <Typography variant='body1'>so here i am.</Typography>
                         <br />
-                        <Typography variant='subtitle1'>now, web development is the name of the game. for a few years i've been grinding my axe, and in the last six months i hit that magic moment where you don't feel like an impostor any more.</Typography>
-                        <Typography variant='subtitle1'>...and i started creating. now i don't know how to stop.</Typography>
+                        <Typography variant='body1'>now, web development is the name of the game. for a few years i've been grinding my axe, and in the last six months i hit that magic moment where you don't feel like an impostor any more.</Typography>
+                        <Typography variant='body1'>...and i started creating. now i don't know how to stop.</Typography>
                 </div></Paper></Grid>
-                <Grid item sm={12} className={linksGridItem}><Paper className={classes.links}></Paper></Grid>
+                <Grid item sm={12} className={linksGridItem}><Paper className={classes.links}>
+                    <a href='https://github.com/sloont'><GitHubIcon fontSize='large' /></a><a href='mailto:colinabel93@gmail.com?subject=mail from sloont.me'><MailOutlineIcon fontSize='large' /></a></Paper>
+                </Grid>
                 
             </Grid>
         </Grid>
