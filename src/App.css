@@ -1,3 +1,7 @@
+body {
+    font-size: 14px;
+}
+
 main {
     width: calc(100vw - 4rem);
     height: calc(100vh - 8rem);
@@ -27,6 +31,7 @@ main {
 }
 
 @media (max-width:480px) {
+    
     main {
         width: calc(100vw - 2rem);
         height: calc(100vh - 6rem);
