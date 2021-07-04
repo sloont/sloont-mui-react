@@ -60,7 +60,7 @@ class Orb {
         //set deltas
         this.dx = 1.5 * this.speed;
         this.dy = 1 * this.speed;
-        this.gravity = [0, -0.05];
+        this.gravity = [0, -0.1];
     }
     draw() {
         this.backgroundCTX.beginPath();
