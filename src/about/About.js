@@ -89,7 +89,7 @@ const useStyles = makeStyles({
         width: '100%', 
         overflow: 'auto',
         '& p': {
-            fontSize: 12
+            fontSize: 14
         } 
     },
     descriptionHeader: {
@@ -348,18 +348,17 @@ const About = () => {
             <Grid item container xs={12} sm={6} className={descriptionGrid}>
                 
                 <Grid item sm={12} className={descriptionGridItem}><Paper className={description}>
-                    <div className={classes.innerDescription}><Typography gutterBottom variant='h4' align='center' className={classes.descriptionHeader}>what is <span style={{ color: '#75cff8' }}>sloont</span>?</Typography>
-                        <Typography variant='body1'>well, it's me. to be honest, i don't really know about the name. it's old and has stuck around for a long time.</Typography>
-                        <Typography variant='body1'>i'm <span style={{ color: '#ff905b' }}>colin.</span></Typography>
+                    <div className={classes.innerDescription}><Typography gutterBottom variant='h4' align='center' className={classes.descriptionHeader}>What is <span style={{ color: '#75cff8' }}>sloont</span>?</Typography>
+                        <Typography variant='body1'>Well, it's me. At this point, I don't actually know about the name — it's old and has stuck around for a long time. You can call me <span style={{ color: '#ff905b' }}>Colin</span>.</Typography>
+                        
                         <br />
-                        <Typography variant='body1'>i've been many things in life, from college dropout to barista, from unemployed to college graduate. i love learning new things, and if i could go to school forever, i probably would.</Typography>
-                        <Typography variant='body1'>i like soccer and hockey, number theory and precious metal refining, video games and cats. basically a whole handful of different things.</Typography>
+                        <Typography variant='body1'>My education is in bio- and physical chemistry, with a minor in writing. I like soccer, hockey, number theory, precious metal refining, video games, and cats. I love learning new things, and if I could go to school forever, I probably would.</Typography>
+                        
                         <br />
-                        <Typography variant='body1'>my education is in bio- and physical chemistry, but at some point i decided to go against it. i wanted to do other things.</Typography>
-                        <Typography variant='body1'>so here i am.</Typography>
+                        <Typography variant='body1'>The last few years, though, my main focus has been web development. This website, and the projects linked here, are examples of what I create when left to my own devices. and now that I’ve started creating, I’m not sure I know how to stop.</Typography>
+                        
                         <br />
-                        <Typography variant='body1'>now, web development is the name of the game. for a few years i've been grinding my axe, and in the last six months i hit that magic moment where you don't feel like an impostor any more.</Typography>
-                        <Typography variant='body1'>...and i started creating. now i don't know how to stop.</Typography>
+                        <Typography variant='body1'>If you're wondering what I'm working on now... a few things. The most notable being an overhaul of the old Schedule Generator project. I'm working on moving the data structure and calculations to a fresh Node.js backend, with authentication so users can store teams and schedules on a Mongo database.</Typography>
                 </div></Paper></Grid>
                 <Grid item sm={12} className={linksGridItem}><Paper className={classes.links}>
                     <a href='https://github.com/sloont'><GitHubIcon fontSize='large' /></a><a href='mailto:colinabel93@gmail.com?subject=mail from sloont.me'><MailOutlineIcon fontSize='large' /></a></Paper>
