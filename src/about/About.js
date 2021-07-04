@@ -89,7 +89,7 @@ const useStyles = makeStyles({
         width: '100%', 
         overflow: 'auto',
         '& p': {
-            fontSize: 14
+            fontSize: '14px !important'
         } 
     },
     descriptionHeader: {
