@@ -352,7 +352,10 @@ const About = () => {
                 
                 <Grid item sm={12} className={descriptionGridItem}><Paper className={description}>
                     <div className={classes.innerDescription}><Typography gutterBottom variant='h2' align='center' className={classes.descriptionHeader}>what is <span style={{ color: '#75cff8' }}>sloont</span>?</Typography>
-                        <Typography variant='body1'>Well, it's me. At this point, I don't actually know about the name — it's old and has stuck around for a long time. You can call me <span style={{ color: '#ff905b' }}>Colin</span>.</Typography>
+                        <Typography variant='body1'>Well, it's me. At this point, I don't actually know about the name — it's old and has stuck around for a long time.</Typography>
+
+                        <br />
+                        <Typography variant='body1'>You can call me <span style={{ color: '#ff905b' }}>Colin</span>.</Typography>
                         
                         <br />
                         <Typography variant='body1'>My education is in bio- and physical chemistry, with a minor in writing. I like soccer, hockey, number theory, precious metal refining, video games, and cats. I love learning new things, and if I could go to school forever, I probably would.</Typography>
