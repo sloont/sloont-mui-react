@@ -68,6 +68,7 @@ const useStyles = makeStyles({
         borderRadius: 4, 
         boxShadow: '0 3px 5px 2px rgba(0,0,0, .3)',  
         paddingBottom: '1rem', 
+        paddingTop: '1rem',
         width: '100%', 
         height: '100%',
         
@@ -89,11 +90,13 @@ const useStyles = makeStyles({
         width: '100%', 
         overflow: 'auto',
         '& p': {
-            fontSize: '14px !important'
+            fontSize: '18px !important',
+            letterSpacing: 1.5
         } 
     },
     descriptionHeader: {
-        padding : 4
+        padding : 4,
+        
     },
     linksGridItem: {
         width: '100%', 
@@ -348,7 +351,7 @@ const About = () => {
             <Grid item container xs={12} sm={6} className={descriptionGrid}>
                 
                 <Grid item sm={12} className={descriptionGridItem}><Paper className={description}>
-                    <div className={classes.innerDescription}><Typography gutterBottom variant='h4' align='center' className={classes.descriptionHeader}>What is <span style={{ color: '#75cff8' }}>sloont</span>?</Typography>
+                    <div className={classes.innerDescription}><Typography gutterBottom variant='h2' align='center' className={classes.descriptionHeader}>what is <span style={{ color: '#75cff8' }}>sloont</span>?</Typography>
                         <Typography variant='body1'>Well, it's me. At this point, I don't actually know about the name — it's old and has stuck around for a long time. You can call me <span style={{ color: '#ff905b' }}>Colin</span>.</Typography>
                         
                         <br />
