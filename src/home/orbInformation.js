@@ -22,6 +22,7 @@ export const skillValues = {
     'ubuntu-icon': 3,
     'visualstudio-icon': 4,
     'windows-icon': 4,
+    'postgresql-icon': 5,
 }
 
 export const orbInformation = {}

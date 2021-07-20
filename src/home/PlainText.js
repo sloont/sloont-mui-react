@@ -70,7 +70,8 @@ const PlainText = () => {
                 npm : 4,
                 visualStudio : 4,
                 github : 5,
-                mongoDB : 2
+                mongoDB : 2,
+                postgreSQL : 5
             },
 
             operatingSystem : {
